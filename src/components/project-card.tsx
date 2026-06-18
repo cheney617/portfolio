@@ -54,8 +54,12 @@ export function ProjectCard({
   links,
   className,
 }: Props) {
+  const isInternal = href && (href.startsWith("/") || href.startsWith("#"));
   return (
-    <div
+    <Link
+      href={href || "#"}
+      target={isInternal ? undefined : "_blank"}
+      rel={isInternal ? undefined : "noopener noreferrer"}
       className={cn(
         "flex flex-col h-full border border-border rounded-xl overflow-hidden hover:ring-2 cursor-pointer hover:ring-muted transition-all duration-200",
         className
@@ -138,6 +142,6 @@ export function ProjectCard({
           </div>
         )}
       </div>
-    </div>
+    </Link>
   );
 }
