@@ -33,6 +33,13 @@ export default function ContactSection() {
           </Link>{" "}
           ，我会尽快回复。
         </p>
+        <Link
+          href="/resume.pdf"
+          target="_blank"
+          className="mt-2 inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition"
+        >
+          📄 下载完整简历 (PDF)
+        </Link>
       </div>
     </div>
   );
