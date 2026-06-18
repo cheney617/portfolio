@@ -76,7 +76,7 @@ export const DATA = {
       badges: [],
       location: "Shanghai, China",
       title: "产品经理 · 会员+平台产品负责人（5人团队）",
-      logoUrl: "/ctrip.svg",
+      logoUrl: "/ctrip.png",
       start: "Jul 2017",
       end: "Jul 2022",
       description:
@@ -88,7 +88,7 @@ export const DATA = {
       school: "大连理工大学",
       href: "https://www.dlut.edu.cn",
       degree: "硕士 · 环境科学与工程",
-      logoUrl: "/dlut.svg",
+      logoUrl: "/dlut.png",
       start: "2014",
       end: "2017",
     },
