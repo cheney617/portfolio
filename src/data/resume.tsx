@@ -122,7 +122,7 @@ export const DATA = {
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: "",
+      image: "/project-ecosystem.svg",
       video: "",
     },
     {
@@ -145,7 +145,7 @@ export const DATA = {
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: "",
+      image: "/project-dm.svg",
       video: "",
     },
     {
@@ -168,7 +168,7 @@ export const DATA = {
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: "",
+      image: "/project-membership.svg",
       video: "",
     },
     {
@@ -190,7 +190,7 @@ export const DATA = {
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: "",
+      image: "/project-subscription.svg",
       video: "",
     },
   ],

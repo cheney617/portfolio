@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs><linearGradient id="g3" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#1c1917"/><stop offset="100%" style="stop-color:#451a03"/></linearGradient></defs>
+  <rect width="800" height="400" fill="url(#g3)"/>
+  <text x="400" y="160" font-size="48" text-anchor="middle" fill="#fbbf24" font-family="system-ui" font-weight="bold">💎 付费会员体系</text>
+  <text x="400" y="220" font-size="24" text-anchor="middle" fill="#94a3b8" font-family="system-ui">焦虑→确定性 → 权益设计 → 等级+积分</text>
+  <text x="400" y="280" font-size="36" text-anchor="middle" fill="#f59e0b" font-family="system-ui" font-weight="bold">近千万用户 · +480%</text>
+</svg>
