@@ -172,15 +172,16 @@ export const DATA = {
       video: "",
     },
     {
-      title: "TikTok 订阅会员定价",
+      title: "TikTok 订阅支付基建",
       href: "/projects/subscription",
       dates: "Jun 2023 - Oct 2024",
       active: false,
       description:
-        "对标Twitch/YouTube补齐订阅定价基建。设计多套餐架构+低价入口升级跃迁机制，结合历史数据和地区消费力推荐差异化定价方案，让定价从作者拍脑袋变成平台推荐。被订阅数+8%，收入+2%。",
+        "主导TikTok直播订阅的支付基建迭代，对标Twitch/YouTube补齐核心能力差距。搭建多档位套餐架构支持作者分层定价，设计低价入口+升级跃迁的付费漏斗，落地基于历史数据和地区消费力的差异化定价策略推荐。被订阅数+8%，收入+2%。",
       technologies: [
+        "Payment Infra",
         "Pricing Strategy",
-        "Recommendation",
+        "Subscription",
         "从0到1",
       ],
       links: [
