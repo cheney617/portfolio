@@ -8,19 +8,19 @@ export const DATA = {
   location: "Shanghai / Sydney",
   locationLink: "https://www.google.com/maps/place/sydney",
   description:
-    "8.5年C端产品 · 发现机会 · 定义方向 · 整合资源 · 数据验证",
+    "8.5年C端产品 · 从单点业务到完整商业链路负责人 · 近一年深度实践AI×产品",
   summary:
-    "携程5年，从0搭建千万级付费会员体系，收益+480%，入围CEO大奖。TikTok LIVE 4年，前期负责订阅会员支付基建和增长，后期成功转型留资业务方向——从经营工具搭建到私信转化提效，再到推动开放生态方向探索，拉通商业化/开放平台/外部合作方完成MVP验证。实线管理5人团队，跨6+团队协调推动项目落地，海外全英文办公2.5年。近两年深度实践AI×产品。",
+    "携程5年，5次晋升。从0搭建千万级付费会员和等级积分体系，同时作为微信小程序抢票增长方向POC，最早引领抢票裂变玩法，春节期间实现千万级访问DAU。TikTok LIVE 4年，前期作为订阅会员方向POC，主导支付体系搭建与主播侧商业化转型；后期转型留资业务方向，从经营工具搭建到私信转化提效，再到推动开放生态方向落地。完成了从单点业务方向角色到完整商业链路负责人的转变。实线管理5人团队，跨6+团队协调推动项目落地，海外全英文办公2.5年。近一年深度实践AI×产品。",
   avatarUrl: "/me.png",
   skills: [
-    { name: "产品策略", icon: (_props: any) => null },
+    { name: "商业策略", icon: (_props: any) => null },
     { name: "从0到1", icon: (_props: any) => null },
-    { name: "数据分析", icon: (_props: any) => null },
-    { name: "AI应用", icon: (_props: any) => null },
-    { name: "用户增长", icon: (_props: any) => null },
-    { name: "商业化", icon: (_props: any) => null },
-    { name: "跨团队协作", icon: (_props: any) => null },
-    { name: "英语办公", icon: (_props: any) => null },
+    { name: "增长", icon: (_props: any) => null },
+    { name: "支付基建", icon: (_props: any) => null },
+    { name: "AI产品", icon: (_props: any) => null },
+    { name: "数据驱动", icon: (_props: any) => null },
+    { name: "团队管理", icon: (_props: any) => null },
+    { name: "全英文办公", icon: (_props: any) => null },
   ],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
@@ -68,7 +68,7 @@ export const DATA = {
       start: "Jul 2022",
       end: "Present",
       description:
-        "独立发现需求错配并推动方向转型：从经营橱窗搭建（留资作者+23%）→私信转化提效（+35%，协调私信/AI模型/主框架团队）→开放生态方向探索（拉通商业化、开放平台、PGC短剧、外部Calendly团队，三方链接CTR+100%）。跨6+团队（商业化/KYB/KYC/PTE/USDS/法务）推动行业认证体系从0到上线。此前负责订阅会员支付基建迭代（被订阅数+8%）。",
+        "前期作为订阅会员方向POC，从0搭建订阅支付体系（自定义定价→多档位套餐→差异化策略推荐，被订阅数+8%），推动订阅主播侧商业化转型。后期转型留资业务方向：搭建Service+经营橱窗（留资作者+23%，开播时长+15%），设计私信转化工具（转化+35%，AI模型识别高意向用户），主导开放生态方向探索并推动决策落地（拉通商业化/开放平台/外部Calendly，三方链接CTR+100%）。协调6+团队（商业化/KYB/KYC/PTE/USDS/法务）推动行业认证体系上线。",
     },
     {
       company: "携程 · 智行火车票",
@@ -80,7 +80,7 @@ export const DATA = {
       start: "Jul 2017",
       end: "Jul 2022",
       description:
-        "从0到1搭建付费会员体系——找到「抢票焦虑」这个核心付费点，设计三类场景权益+等级分层+积分闭环（累计近千万用户，收益+480%，2020入围CEO大奖）。5人团队负责人，2.5年团队管理，5年5次晋升。同时负责微信小程序新客增长和汽车票产品线。",
+        "从0搭建付费会员和等级积分体系（累计近千万用户，收益同比+480%，2020入围CEO大奖）。同时作为微信小程序抢票增长方向POC，最早引领抢票裂变玩法，春节期间实现千万级访问DAU。5人团队负责人，5年5次晋升。同时负责携程汽车票产品线的票量、收益和用户增长。",
     },
   ],
   education: [
@@ -103,12 +103,12 @@ export const DATA = {
   ],
   projects: [
     {
-      title: "Service+ 开放生态",
+      title: "直播留资开放生态",
       href: "/projects/open-ecosystem",
       dates: "Nov 2024 - Jun 2026",
       active: true,
       description:
-        "发现平台闭环与作者自有工具的结构性矛盾后，拉通商业化（广告归因）、开放平台（技术方案）、PGC短剧（内容生态）、外部Calendly（联合推广+数据共享）、PTE（合规）等多方资源，设计双线MVP验证（三方链接CTR+100%，Calendly 1240绑定）。输出路径选择决策文档推动Leadership拍板Q3放量。",
+        "在直播留资深度转化工具的探索中，发现平台闭环与作者自有工具的结构性矛盾。拉通商业化/开放平台/外部Calendly等多方资源完成MVP验证（三方链接CTR+100%，Calendly 1240绑定）。最终决策：以带数据归因的方式灵活支持作者配置外链，同步与协作方沟通输出SDK让三方工具集成。",
       technologies: [
         "Product Strategy",
         "Data Analysis",
@@ -172,17 +172,17 @@ export const DATA = {
       video: "",
     },
     {
-      title: "TikTok 订阅支付基建",
+      title: "TikTok 订阅支付体系",
       href: "/projects/subscription",
       dates: "Jun 2023 - Oct 2024",
       active: false,
       description:
-        "判断订阅转化低的根因不在前端而在支付架构——底层不支持自定义定价和多套餐计费。分三步迭代：先开放单套餐自定义定价，再搭建多档位套餐架构和升降级结算，最后叠加基于数据的差异化定价策略推荐。被订阅数+8%，收入+2%。",
+        "作为订阅会员方向POC，从0搭建直播订阅支付体系。分三步迭代基建：先开放单套餐自定义定价，再搭建多档位套餐架构和升降级结算，最后叠加基于数据的差异化定价策略推荐。同步推动订阅主播侧商业化转型。被订阅数+8%，收入+2%。",
       technologies: [
         "Payment Infra",
         "Pricing Strategy",
         "Subscription",
-        "从0到1",
+        "POC",
       ],
       links: [
         {
@@ -194,14 +194,50 @@ export const DATA = {
       image: "/project-subscription.svg",
       video: "",
     },
+    {
+      title: "Service+ 经营橱窗搭建",
+      href: "",
+      dates: "Nov 2024 - Jun 2025",
+      active: false,
+      description:
+        "为留资作者搭建承载多留资工具的直播间经营橱窗，将作者经营行为迁移至平台内。设计行业预选工具组合和经营罗盘。留资作者+23%，开播时长+15%。",
+      technologies: ["从0到1", "Creator Tools", "A/B Testing"],
+      links: [],
+      image: "",
+      video: "",
+    },
+    {
+      title: "行业认证体系",
+      href: "",
+      dates: "2025 - 2026",
+      active: false,
+      description:
+        "从0搭建直播行业资质认证审核体系，跨6+团队（商业化/KYB/KYC/PTE/USDS/法务）协调落地。设计标签消费框架（准入/挂载/清退分层），打通VBA身份升级路径。",
+      technologies: ["Compliance", "Cross-team", "System Design"],
+      links: [],
+      image: "",
+      video: "",
+    },
+    {
+      title: "智行微信小程序增长",
+      href: "",
+      dates: "2017 - 2022",
+      active: false,
+      description:
+        "作为微信小程序抢票增长方向POC，最早引领抢票裂变玩法，春节期间实现千万级访问DAU。负责小程序功能搭建、新客增长和汽车票产品线。",
+      technologies: ["WeChat Mini Program", "Growth", "Viral"],
+      links: [],
+      image: "",
+      video: "",
+    },
   ],
   hackathons: [
     {
-      title: "AI × 直播互动游戏",
+      title: "AI × 直播互动游戏（Hackathon冠军）",
       dates: "June 2026",
       location: "ByteDance Hackathon, Sydney",
       description:
-        "Hackathon项目，探索「AI×直播×游戏」方向。核心创新：观众通过自然语言评论（而非指令/礼物）直接影响游戏剧情。我负责评论智能引擎（5类分类<1ms）、AI叙事生成（Claude API，4种场景）、主播-观众实时同步（WebSocket）。末日求生主题，从idea到完整可玩Demo仅2天。",
+        "TikTok LIVE组内Hackathon第一名，TikTok Hackathon冠军，TikTok LIVE Net冠军。设计评论驱动的AI叙事引擎：评论智能分类（5类，<1ms）+ Claude API叙事生成（4种场景）+ WebSocket主播-观众实时同步。末日求生主题，从idea到完整可玩Demo仅2天。",
       image: "",
       links: [
         {
@@ -212,11 +248,11 @@ export const DATA = {
       ],
     },
     {
-      title: "AI 工作流提效",
+      title: "AI深度融入PM工作流",
       dates: "2025 - Present",
       location: "日常实践",
       description:
-        "将AI工具深度融入PM日常工作流。用Claude Code搭建数据监控自动化（SQL生成+定时推送飞书群）、PRD全链路辅助（简介→框架→交互→原型→会议纪要自动更新）、Vibe Coding从0开发完整项目（生日聚会网站、直播互动游戏），以及直播Case Review自动化（ASR全切片分析，覆盖12场景×10角色类型）。",
+        "将AI工具深度融入产品经理日常工作流。用Claude Code搭建数据监控自动化（SQL生成+定时推送飞书群）、PRD全链路辅助（功能简介→框架→交互→原型→评审纪要自动更新）、从0开发提效工具和直播Case Review自动化（ASR全切片分析，覆盖12场景×10角色类型）。",
       image: "",
       links: [],
     },
