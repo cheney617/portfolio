@@ -148,11 +148,11 @@ const PROJECTS_DETAIL: Record<string, {
     reflection: "作者在拥有一定粉丝规模和变现能力后，都会倾向于使用订阅这样的连续付费形式来获得持续收入——订阅是作者经营能力和粉丝规模达到一定量级后的必然趋势。在这种情况下，他们对变现产品的诉求也一定是逐渐多样化的。但我们也发现，即使把订阅能力做到极限，它也只满足了一小部分能力较强的作者和一小部分愿意付费的用户。还有更多信任尚未建立、或没有强付费意愿的用户，以及能力尚在成长中的作者，他们可能更倾向于先做免费咨询或定制化变现。这也推导出了我们后续将业务方向转变为线上服务行业变现和直播留资方向的决策。",
     links: [],
   },
-  "service-plus": {
-    title: "直播留资经营工具 Service+",
-    subtitle: "从0搭建直播间经营橱窗 + 生态治理",
+  "service-governance": {
+    title: "经营工具与生态治理",
+    subtitle: "从0搭建工具入口，确保好的工具只放给有资质的作者",
     company: "TikTok LIVE",
-    period: "2024.11 - 2025.06",
+    period: "2024.11 - 2026.06",
     tags: ["从0到1", "Creator Tools", "A/B Testing", "Governance"],
     metrics: [
       { label: "留资作者增长", value: "+23%" },
@@ -220,10 +220,7 @@ const PROJECTS_DETAIL: Record<string, {
     company: "TikTok LIVE",
     period: "2025 - 至今",
     tags: ["AI", "Workflow", "Claude Code", "提效"],
-    metrics: [
-      { label: "覆盖场景", value: "3大类" },
-      { label: "日常使用", value: "每天" },
-    ],
+    metrics: [],
     background: "产品经理的日常工作中存在大量重复性高、结构化强但耗时的任务：数据查询需要手写SQL、PRD撰写需要从零搭框架、Case Review需要人工逐条分析直播录像。这些任务不是不会做，而是占用了大量本可以用于思考和决策的时间。我开始系统性地将AI工具融入每个环节，不是偶尔用一下ChatGPT，而是搭建完整的自动化管线。",
     backgroundTransition: "",
     flowDiagram: "数据监控自动化 → PRD全链路提效 → Case Review自动化",
@@ -282,7 +279,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
             {project.metrics.map((m) => (
               <div key={m.label} className="border rounded-lg p-4 text-center">
-                <div className="text-2xl font-bold">{m.value}</div>
+                <div className={`font-bold ${m.value.length > 6 ? 'text-lg' : 'text-2xl'}`}>{m.value}</div>
                 <div className="text-xs text-muted-foreground">{m.label}</div>
               </div>
             ))}

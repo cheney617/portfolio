@@ -195,33 +195,21 @@ export const DATA = {
       video: "",
     },
     {
-      title: "直播留资经营工具 Service+",
-      href: "/projects/service-plus",
-      dates: "Nov 2024 - Jun 2025",
+      title: "经营工具与生态治理",
+      href: "/projects/service-governance",
+      dates: "Nov 2024 - Jun 2026",
       active: false,
       description:
-        "留资主播缺乏获取用户线索的平台抓手。从0搭建经营工具入口，集成私信、表单等工具，设定准入清退门槛；协调6+团队推动行业认证上线。留资作者+23%，开播留存+15%。",
-      technologies: ["从0到1", "Creator Tools", "A/B Testing", "Governance"],
+        "从0搭建经营工具入口，集成多个线索收集工具；设计准入清退门槛，协调6+团队推动行业认证上线，确保工具只放给有资质的作者。留资作者+23%，开播留存+15%，目标作者浓度>80%。",
+      technologies: ["从0到1", "Creator Tools", "Governance", "Cross-team"],
       links: [
         {
           type: "详情",
-          href: "/projects/service-plus",
+          href: "/projects/service-governance",
           icon: <Icons.globe className="size-3" />,
         },
       ],
       image: "/project-serviceplus.svg",
-      video: "",
-    },
-    {
-      title: "行业认证体系",
-      href: "",
-      dates: "2025 - 2026",
-      active: false,
-      description:
-        "从0搭建直播行业资质认证审核体系，设计标签消费框架（准入/挂载/清退分层），协调6+团队推动落地。",
-      technologies: ["Compliance", "Cross-team", "System Design"],
-      links: [],
-      image: "/project-certification.svg",
       video: "",
     },
     {

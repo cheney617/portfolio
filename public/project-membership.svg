@@ -1,6 +1,7 @@
 <svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
   <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#8a83ff"/><stop offset="100%" stop-color="#5b3fd1"/></linearGradient></defs>
   <rect width="800" height="400" fill="url(#bg)"/>
-  <text x="400" y="155" fill="#fff" font-family="system-ui,sans-serif" font-size="72" font-weight="700" text-anchor="middle">+480% 收益</text>
-  <text x="400" y="250" fill="#fff" font-family="system-ui,sans-serif" font-size="28" text-anchor="middle" opacity="0.65">围绕抢票焦虑设计权益，从0搭建千万级会员体系</text>
+  <text x="400" y="150" fill="#fff" font-family="system-ui,sans-serif" font-size="72" font-weight="700" text-anchor="middle">+480% 收益</text>
+  <text x="400" y="240" fill="#fff" font-family="system-ui,sans-serif" font-size="26" text-anchor="middle" opacity="0.65">围绕抢票焦虑设计权益</text>
+  <text x="400" y="280" fill="#fff" font-family="system-ui,sans-serif" font-size="26" text-anchor="middle" opacity="0.65">从0搭建千万级会员体系</text>
 </svg>
