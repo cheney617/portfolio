@@ -1,0 +1,6 @@
+<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#37d9b0"/><stop offset="100%" stop-color="#1f9bd1"/></linearGradient></defs>
+  <rect width="800" height="400" fill="url(#bg)"/>
+  <text x="400" y="155" fill="#fff" font-family="system-ui,sans-serif" font-size="72" font-weight="700" text-anchor="middle">千万级 DAU</text>
+  <text x="400" y="250" fill="#fff" font-family="system-ui,sans-serif" font-size="28" text-anchor="middle" opacity="0.65">引领抢票裂变玩法，春节千万级访问</text>
+</svg>

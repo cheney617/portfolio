@@ -1,1 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect width="200" height="200" rx="40" fill="#1a0a3a"/><text x="100" y="85" font-size="36" text-anchor="middle" fill="#c9a84c" font-family="serif" font-weight="bold">东南</text><text x="100" y="130" font-size="28" text-anchor="middle" fill="#c9a84c" font-family="serif">大学</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <circle cx="100" cy="100" r="96" fill="#1a0a3a"/>
+  <text x="100" y="90" font-size="32" text-anchor="middle" fill="#c9a84c" font-family="system-ui,sans-serif" font-weight="700">东南</text>
+  <text x="100" y="128" font-size="32" text-anchor="middle" fill="#c9a84c" font-family="system-ui,sans-serif" font-weight="700">大学</text>
+  <text x="100" y="165" font-size="14" text-anchor="middle" fill="rgba(201,168,76,0.6)" font-family="system-ui,sans-serif">SEU · 1902</text>
+</svg>

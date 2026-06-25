@@ -1,7 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
-  <defs><linearGradient id="g4" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#0c1222"/><stop offset="100%" style="stop-color:#1e293b"/></linearGradient></defs>
-  <rect width="800" height="400" fill="url(#g4)"/>
-  <text x="400" y="160" font-size="48" text-anchor="middle" fill="#34d399" font-family="system-ui" font-weight="bold">💰 订阅会员定价</text>
-  <text x="400" y="220" font-size="24" text-anchor="middle" fill="#94a3b8" font-family="system-ui">竞品分析 → 多套餐 → 策略推荐 → AB验证</text>
-  <text x="400" y="280" font-size="36" text-anchor="middle" fill="#10b981" font-family="system-ui" font-weight="bold">被订阅数 +8%</text>
+<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#6a8bff"/><stop offset="100%" stop-color="#3f4fd6"/></linearGradient></defs>
+  <rect width="800" height="400" fill="url(#bg)"/>
+  <text x="400" y="155" fill="#fff" font-family="system-ui,sans-serif" font-size="72" font-weight="700" text-anchor="middle">+12% 订阅率</text>
+  <text x="400" y="250" fill="#fff" font-family="system-ui,sans-serif" font-size="28" text-anchor="middle" opacity="0.65">从固定定价到多档位套餐，支付基建三步迭代</text>
 </svg>

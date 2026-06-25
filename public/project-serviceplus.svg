@@ -1,0 +1,6 @@
+<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f59e0b"/><stop offset="100%" stop-color="#d97706"/></linearGradient></defs>
+  <rect width="800" height="400" fill="url(#bg)"/>
+  <text x="400" y="155" fill="#fff" font-family="system-ui,sans-serif" font-size="72" font-weight="700" text-anchor="middle">+23% 留资作者</text>
+  <text x="400" y="250" fill="#fff" font-family="system-ui,sans-serif" font-size="28" text-anchor="middle" opacity="0.65">从0搭建经营工具入口，统一留资工具管理</text>
+</svg>
