@@ -82,20 +82,6 @@ export function ProjectCard({
             <div className="w-full h-48 bg-muted" />
           )}
         </div>
-        {links && links.length > 0 && (
-          <div className="absolute top-2 right-2 flex flex-wrap gap-2">
-            {links.map((link, idx) => (
-              <Badge
-                key={idx}
-                className="flex items-center gap-1.5 text-xs bg-black text-white hover:bg-black/90"
-                variant="default"
-              >
-                {link.icon}
-                {link.type}
-              </Badge>
-            ))}
-          </div>
-        )}
       </div>
       <div className="p-6 flex flex-col gap-3 flex-1">
         <div className="flex items-start justify-between gap-2">

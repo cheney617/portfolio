@@ -257,8 +257,8 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
     <main className="flex flex-col min-h-[100dvh]">
       <div className="container max-w-3xl mx-auto px-4 py-12">
         <BlurFade delay={0.04}>
-          <Link href="/#projects" className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground mb-8">
-            <ArrowLeftIcon className="size-3" /> 返回项目列表
+          <Link href="/#projects" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mb-8 py-3 px-4 -ml-4 rounded-lg hover:bg-muted transition-colors min-h-[44px]">
+            <ArrowLeftIcon className="size-4" /> 返回项目列表
           </Link>
         </BlurFade>
 

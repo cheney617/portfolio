@@ -30,7 +30,7 @@ export default function ContactSection() {
             className="text-blue-500 hover:underline underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
           >
             {DATA.contact.email}
-          </Link>{" "}
+          </Link>
           ，我会尽快回复。
         </p>
         <Link
@@ -38,10 +38,9 @@ export default function ContactSection() {
           target="_blank"
           className="mt-2 inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition"
         >
-          📄 下载完整简历 (PDF)
+          下载完整简历 (PDF)
         </Link>
       </div>
     </div>
   );
 }
-
