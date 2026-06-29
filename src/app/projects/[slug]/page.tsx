@@ -4,6 +4,36 @@ import Link from "next/link";
 import { ArrowLeftIcon } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import BlurFade from "@/components/magicui/blur-fade";
+import NumberTicker from "@/components/magicui/number-ticker";
+
+/** Parse a metric string like "+480%", "3.91%", "4x", "近千万" into ticker props. */
+function parseMetric(raw: string) {
+  const match = raw.match(/^([^\d-]*)(-?[\d,]+(?:\.\d+)?)(.*)$/);
+  if (!match) return null;
+  const [, prefix, numStr, suffix] = match;
+  const value = parseFloat(numStr.replace(/,/g, ""));
+  if (Number.isNaN(value)) return null;
+  const decimals = numStr.includes(".") ? numStr.split(".")[1].length : 0;
+  return { prefix, value, suffix, decimals };
+}
+
+function MetricValue({ value }: { value: string }) {
+  const parsed = parseMetric(value);
+  const sizeClass = value.length > 6 ? "text-lg" : "text-2xl";
+  if (!parsed) {
+    return <div className={`font-bold ${sizeClass}`}>{value}</div>;
+  }
+  return (
+    <div className={`text-gradient font-bold ${sizeClass}`}>
+      <NumberTicker
+        value={parsed.value}
+        prefix={parsed.prefix}
+        suffix={parsed.suffix}
+        decimals={parsed.decimals}
+      />
+    </div>
+  );
+}
 
 // Project detail data — case studies
 const PROJECTS_DETAIL: Record<string, {
@@ -278,8 +308,11 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         <BlurFade delay={0.12}>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
             {project.metrics.map((m) => (
-              <div key={m.label} className="border rounded-lg p-4 text-center">
-                <div className={`font-bold ${m.value.length > 6 ? 'text-lg' : 'text-2xl'}`}>{m.value}</div>
+              <div
+                key={m.label}
+                className="rounded-lg border border-border bg-card/40 p-4 text-center backdrop-blur transition-colors hover:border-neon/50"
+              >
+                <MetricValue value={m.value} />
                 <div className="text-xs text-muted-foreground">{m.label}</div>
               </div>
             ))}

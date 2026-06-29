@@ -40,6 +40,8 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --color-neon: var(--neon);
+  --color-neon-2: var(--neon-2);
 }
 
 :root {
@@ -75,14 +77,17 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  --neon: oklch(0.62 0.19 245);
+  --neon-2: oklch(0.62 0.22 305);
+  --grid-line: oklch(0.55 0 0 / 12%);
 }
 
 .dark {
-  --background: oklch(0.18 0 0);
+  --background: oklch(0.16 0.012 265);
   --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
+  --card: oklch(0.21 0.014 265);
   --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
+  --popover: oklch(0.21 0.014 265);
   --popover-foreground: oklch(0.985 0 0);
   --primary: oklch(0.922 0 0);
   --primary-foreground: oklch(0.205 0 0);
@@ -109,6 +114,9 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+  --neon: oklch(0.8 0.15 220);
+  --neon-2: oklch(0.74 0.2 305);
+  --grid-line: oklch(1 0 0 / 7%);
 }
 
 @layer base {
@@ -233,4 +241,84 @@
     @apply border-b-0;
   }
 
+}
+
+@layer utilities {
+  /* Techy grid backgrounds */
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+
+  .bg-grid-sm {
+    background-image:
+      linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+    background-size: 26px 26px;
+  }
+
+  .bg-dots {
+    background-image: radial-gradient(var(--grid-line) 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+
+  /* Neon gradient text */
+  .text-gradient {
+    background-image: linear-gradient(
+      120deg,
+      var(--foreground),
+      color-mix(in oklch, var(--neon) 80%, var(--foreground)),
+      var(--neon-2)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Soft neon glow */
+  .glow {
+    box-shadow: 0 0 60px -18px var(--neon), 0 0 24px -16px var(--neon-2);
+  }
+
+  .glow-border {
+    border-color: color-mix(in oklch, var(--neon) 35%, var(--border));
+  }
+
+  /* 3D helpers used by the layered stack / tilt cards */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+}
+
+@keyframes grid-pan {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 56px 56px;
+  }
+}
+
+.animate-grid-pan {
+  animation: grid-pan 8s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-grid-pan {
+    animation: none;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
 }

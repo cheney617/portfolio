@@ -2,6 +2,7 @@
 "use client";
 
 import { Badge } from "@/components/ui/badge";
+import TiltCard from "@/components/magicui/tilt-card";
 import { cn } from "@/lib/utils";
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
@@ -56,58 +57,60 @@ export function ProjectCard({
 }: Props) {
   const isInternal = href && (href.startsWith("/") || href.startsWith("#"));
   return (
-    <Link
-      href={href || "#"}
-      target={isInternal ? undefined : "_blank"}
-      rel={isInternal ? undefined : "noopener noreferrer"}
-      className={cn(
-        "flex flex-col h-full border border-border rounded-xl overflow-hidden hover:ring-2 cursor-pointer hover:ring-muted transition-all duration-200",
-        className
-      )}
-    >
-      <div className="relative shrink-0">
-        <div className="block">
-          {video ? (
-            <video
-              src={video}
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="w-full h-48 object-cover"
-            />
-          ) : image ? (
-            <ProjectImage src={image} alt={title} />
-          ) : (
-            <div className="w-full h-48 bg-muted" />
+    <TiltCard max={6} className={cn("h-full", className)}>
+      <Link
+        href={href || "#"}
+        target={isInternal ? undefined : "_blank"}
+        rel={isInternal ? undefined : "noopener noreferrer"}
+        className="flex h-full cursor-pointer flex-col overflow-hidden rounded-xl border border-border bg-card/50 backdrop-blur transition-all duration-300 hover:border-neon/60 group-hover:shadow-[0_30px_70px_-30px_color-mix(in_oklch,var(--neon)_55%,transparent)]"
+      >
+        <div className="relative shrink-0">
+          <div className="block">
+            {video ? (
+              <video
+                src={video}
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="h-48 w-full object-cover"
+              />
+            ) : image ? (
+              <ProjectImage src={image} alt={title} />
+            ) : (
+              <div className="h-48 w-full bg-muted" />
+            )}
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-card/80 to-transparent" />
+          </div>
+        </div>
+        <div className="flex flex-1 flex-col gap-3 p-6">
+          <div className="flex items-start justify-between gap-2">
+            <div className="flex flex-col gap-1">
+              <h3 className="font-semibold transition-colors group-hover:text-foreground">
+                {title}
+              </h3>
+              <time className="text-xs text-muted-foreground">{dates}</time>
+            </div>
+            <ArrowUpRight className="h-4 w-4 text-muted-foreground transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-neon" aria-hidden />
+          </div>
+          <div className="prose max-w-full flex-1 text-pretty font-sans text-xs leading-relaxed text-muted-foreground dark:prose-invert">
+            <Markdown>{description}</Markdown>
+          </div>
+          {tags && tags.length > 0 && (
+            <div className="mt-auto flex flex-wrap gap-1">
+              {tags.map((tag) => (
+                <Badge
+                  key={tag}
+                  className="h-6 w-fit border border-border px-2 text-[11px] font-medium"
+                  variant="outline"
+                >
+                  {tag}
+                </Badge>
+              ))}
+            </div>
           )}
         </div>
-      </div>
-      <div className="p-6 flex flex-col gap-3 flex-1">
-        <div className="flex items-start justify-between gap-2">
-          <div className="flex flex-col gap-1">
-            <h3 className="font-semibold">{title}</h3>
-            <time className="text-xs text-muted-foreground">{dates}</time>
-          </div>
-          <ArrowUpRight className="h-4 w-4 text-muted-foreground" aria-hidden />
-        </div>
-        <div className="text-xs flex-1 prose max-w-full text-pretty font-sans leading-relaxed text-muted-foreground dark:prose-invert">
-          <Markdown>{description}</Markdown>
-        </div>
-        {tags && tags.length > 0 && (
-          <div className="flex flex-wrap gap-1 mt-auto">
-            {tags.map((tag) => (
-              <Badge
-                key={tag}
-                className="text-[11px] font-medium border border-border h-6 w-fit px-2"
-                variant="outline"
-              >
-                {tag}
-              </Badge>
-            ))}
-          </div>
-        )}
-      </div>
-    </Link>
+      </Link>
+    </TiltCard>
   );
 }

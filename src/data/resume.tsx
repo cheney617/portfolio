@@ -22,6 +22,49 @@ export const DATA = {
     { name: "团队管理", icon: (_props: any) => null },
     { name: "全英文办公", icon: (_props: any) => null },
   ],
+  stats: [
+    { value: 9, prefix: "", suffix: "年", decimals: 0, label: "C端产品经验" },
+    { value: 1000, prefix: "", suffix: "万+", decimals: 0, label: "服务付费会员" },
+    { value: 480, prefix: "+", suffix: "%", decimals: 0, label: "会员业务收益增长" },
+    { value: 35, prefix: "+", suffix: "%", decimals: 0, label: "AI驱动私信转化" },
+  ],
+  capabilities: [
+    {
+      title: "AI × 产品",
+      blurb: "将AI能力产品化，并系统性融入PM工作流",
+      tag: "AI",
+    },
+    {
+      title: "商业化策略",
+      blurb: "从单点变现到完整商业链路设计",
+      tag: "Monetization",
+    },
+    {
+      title: "增长 & 转化",
+      blurb: "裂变增长、漏斗诊断与转化提效",
+      tag: "Growth",
+    },
+    {
+      title: "支付基建",
+      blurb: "订阅/会员的定价、计费与结算能力",
+      tag: "Payments",
+    },
+    {
+      title: "数据驱动",
+      blurb: "MVP验证、A/B实验与数据归因",
+      tag: "Data",
+    },
+    {
+      title: "跨团队推动",
+      blurb: "协调6+团队推动复杂项目落地",
+      tag: "XFN",
+    },
+    {
+      title: "团队管理",
+      blurb: "带领团队从0到1搭建产品线",
+      tag: "Leadership",
+    },
+  ],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
     { href: "/blog", icon: NotebookIcon, label: "Blog" },

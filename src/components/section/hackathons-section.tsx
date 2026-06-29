@@ -35,13 +35,13 @@ export default function HackathonsSection() {
         <div className="flex flex-col gap-y-4 items-center justify-center">
           <div className="flex items-center w-full">
             <div className="flex-1 h-px bg-linear-to-r from-transparent from-5% via-border via-95% to-transparent" />
-            <div className="border bg-primary z-10 rounded-xl px-4 py-1">
-              <span className="text-background text-sm font-medium">AI Practice</span>
+            <div className="z-10 rounded-full border border-neon/40 bg-card/60 px-4 py-1 backdrop-blur">
+              <span className="font-mono text-xs uppercase tracking-[0.2em] text-neon">AI Practice</span>
             </div>
             <div className="flex-1 h-px bg-linear-to-l from-transparent from-5% via-border via-95% to-transparent" />
           </div>
           <div className="flex flex-col gap-y-3 items-center justify-center">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">AI × 产品</h2>
+            <h2 className="text-gradient text-3xl font-bold tracking-tighter sm:text-4xl">AI × 产品</h2>
             <p className="text-muted-foreground md:text-lg/relaxed lg:text-base/relaxed xl:text-lg/relaxed text-balance text-center">
               从用AI辅助工作，到用AI构建产品能力本身。
             </p>
@@ -52,7 +52,7 @@ export default function HackathonsSection() {
             <BlurFade key={project.title} delay={BLUR_FADE_DELAY * 14 + id * 0.05} className="h-full">
               <Link
                 href={project.href}
-                className="flex flex-col h-full border border-border rounded-xl overflow-hidden hover:ring-2 cursor-pointer hover:ring-muted transition-all duration-200"
+                className="group flex h-full cursor-pointer flex-col overflow-hidden rounded-xl border border-border bg-card/50 backdrop-blur transition-all duration-300 hover:border-neon/60 hover:shadow-[0_30px_70px_-30px_color-mix(in_oklch,var(--neon)_55%,transparent)]"
               >
                 <div className="relative shrink-0">
                   {project.image ? (

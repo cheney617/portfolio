@@ -14,8 +14,8 @@ export default function ProjectsSection() {
                             className="flex-1 h-px bg-linear-to-r from-transparent from-5% via-border via-95% to-transparent"
 
                         />
-                        <div className="border bg-primary z-10 rounded-xl px-4 py-1">
-                            <span className="text-background text-sm font-medium">My Projects</span>
+                        <div className="z-10 rounded-full border border-neon/40 bg-card/60 px-4 py-1 backdrop-blur">
+                            <span className="font-mono text-xs uppercase tracking-[0.2em] text-neon">My Projects</span>
                         </div>
                         <div
                             className="flex-1 h-px bg-linear-to-l from-transparent from-5% via-border via-95% to-transparent"
@@ -23,7 +23,7 @@ export default function ProjectsSection() {
                         />
                     </div>
                     <div className="flex flex-col gap-y-3 items-center justify-center">
-                        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">My Projects</h2>
+                        <h2 className="text-gradient text-3xl font-bold tracking-tighter sm:text-4xl">My Projects</h2>
                         <p className="text-muted-foreground md:text-lg/relaxed lg:text-base/relaxed xl:text-lg/relaxed text-balance text-center">
                             以下是我主导的重点项目，涵盖商业化、增长、支付基建和AI应用等方向。
                         </p>
