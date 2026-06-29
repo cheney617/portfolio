@@ -1,34 +1,38 @@
 /* eslint-disable @next/next/no-img-element */
+"use client";
+
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
-import { DATA } from "@/data/resume";
+import { useData } from "@/data/use-data";
 import BlurFade from "@/components/magicui/blur-fade";
 import { ArrowUpRight } from "lucide-react";
 
 const BLUR_FADE_DELAY = 0.04;
 
-const AI_PROJECTS = [
-  {
-    title: "AI直播互动游戏",
-    href: "/projects/ai-game",
-    dates: "June 2026",
-    description: "负责核心交互设计、内容模型输出以及模型评测。评论智能分类→场景剧情生成→主播-观众实时同步。1天完成Demo，获Hackathon冠军。",
-    technologies: ["AI", "Hackathon", "Vibe Coding", "实时互动"],
-    image: "/project-ai-game.svg",
-    metric: "Hackathon冠军",
-  },
-  {
-    title: "AI深度融入PM工作流",
-    href: "/projects/ai-workflow",
-    dates: "2025 - Present",
-    description: "数据监控自动化（SQL生成+定时推送）、PRD全链路提效（框架→原型→评审更新）、Case Review自动化（ASR全切片分析）。",
-    technologies: ["Claude Code", "Workflow", "提效"],
-    image: "/project-ai-workflow.svg",
-    metric: "日常实践",
-  },
-];
+const AI_COVERS: Record<string, string> = {
+  "AI直播互动游戏（Hackathon冠军）": "/project-ai-game.svg",
+  "AI Live Interactive Game (Hackathon Champion)": "/project-ai-game.svg",
+  "AI深度融入PM工作流": "/project-ai-workflow.svg",
+  "AI-Powered PM Workflow": "/project-ai-workflow.svg",
+};
+
+const AI_HREFS: Record<string, string> = {
+  "AI直播互动游戏（Hackathon冠军）": "/projects/ai-game",
+  "AI Live Interactive Game (Hackathon Champion)": "/projects/ai-game",
+  "AI深度融入PM工作流": "/projects/ai-workflow",
+  "AI-Powered PM Workflow": "/projects/ai-workflow",
+};
+
+const AI_TAGS: Record<string, string[]> = {
+  "AI直播互动游戏（Hackathon冠军）": ["AI", "Hackathon", "Vibe Coding", "实时互动"],
+  "AI Live Interactive Game (Hackathon Champion)": ["AI", "Hackathon", "Vibe Coding", "Real-time"],
+  "AI深度融入PM工作流": ["Claude Code", "Workflow", "提效"],
+  "AI-Powered PM Workflow": ["Claude Code", "Workflow", "Efficiency"],
+};
 
 export default function HackathonsSection() {
+  const DATA = useData();
+
   return (
     <section id="hackathons" className="overflow-hidden">
       <div className="flex min-h-0 flex-col gap-y-8 w-full">
@@ -36,29 +40,26 @@ export default function HackathonsSection() {
           <div className="flex items-center w-full">
             <div className="flex-1 h-px bg-linear-to-r from-transparent from-5% via-border via-95% to-transparent" />
             <div className="border bg-primary z-10 rounded-xl px-4 py-1">
-              <span className="text-background text-sm font-medium">AI Practice</span>
+              <span className="text-background text-sm font-medium">{DATA.ui.aiTag}</span>
             </div>
             <div className="flex-1 h-px bg-linear-to-l from-transparent from-5% via-border via-95% to-transparent" />
           </div>
-          <div className="flex flex-col gap-y-3 items-center justify-center">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">AI × 产品</h2>
-            <p className="text-muted-foreground md:text-lg/relaxed lg:text-base/relaxed xl:text-lg/relaxed text-balance text-center">
-              从用AI辅助工作，到用AI构建产品能力本身。
-            </p>
-          </div>
+          <p className="text-muted-foreground text-balance text-center">
+            {DATA.ui.aiDesc}
+          </p>
         </div>
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto">
-          {AI_PROJECTS.map((project, id) => (
+          {DATA.hackathons.map((project, id) => (
             <BlurFade key={project.title} delay={BLUR_FADE_DELAY * 14 + id * 0.05} className="h-full">
               <Link
-                href={project.href}
-                className="flex flex-col h-full border border-border rounded-xl overflow-hidden hover:ring-2 cursor-pointer hover:ring-muted transition-all duration-200"
+                href={AI_HREFS[project.title] || "#"}
+                className="flex flex-col h-full border border-border rounded-card overflow-hidden hover:shadow-card-hover cursor-pointer transition-all duration-200 bg-card relative z-[2]"
               >
-                <div className="relative shrink-0">
-                  {project.image ? (
-                    <img src={project.image} alt={project.title} className="w-full h-48 object-cover" />
+                <div className="relative shrink-0 overflow-hidden rounded-t-card">
+                  {AI_COVERS[project.title] ? (
+                    <img src={AI_COVERS[project.title]} alt={project.title} className="w-full aspect-[2/1] object-cover" />
                   ) : (
-                    <div className="w-full h-48 bg-muted" />
+                    <div className="w-full aspect-[2/1] bg-muted" />
                   )}
                 </div>
                 <div className="p-6 flex flex-col gap-3 flex-1">
@@ -69,9 +70,9 @@ export default function HackathonsSection() {
                     </div>
                     <ArrowUpRight className="h-4 w-4 text-muted-foreground" aria-hidden />
                   </div>
-                  <p className="text-xs flex-1 text-muted-foreground leading-relaxed">{project.description}</p>
+                  <p className="text-sm flex-1 text-muted-foreground leading-relaxed">{project.description}</p>
                   <div className="flex flex-wrap gap-1 mt-auto">
-                    {project.technologies.map((tag) => (
+                    {(AI_TAGS[project.title] || []).map((tag) => (
                       <Badge key={tag} className="text-[11px] font-medium border border-border h-6 w-fit px-2" variant="outline">
                         {tag}
                       </Badge>

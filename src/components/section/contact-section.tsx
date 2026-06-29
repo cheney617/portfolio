@@ -1,12 +1,16 @@
+"use client";
+
 import Link from "next/link";
 import { FlickeringGrid } from "@/components/magicui/flickering-grid";
-import { DATA } from "@/data/resume";
+import { useData } from "@/data/use-data";
+import { Mail, FileDown } from "lucide-react";
 
 export default function ContactSection() {
+  const DATA = useData();
   return (
     <div className="border rounded-xl p-10 relative">
       <div className="absolute -top-4 border bg-primary z-10 rounded-xl px-4 py-1 left-1/2 -translate-x-1/2">
-        <span className="text-background text-sm font-medium">Contact</span>
+        <span className="text-background text-sm font-medium">{DATA.ui.contactTag}</span>
       </div>
       <div className="absolute inset-0 top-0 left-0 right-0 h-1/2 rounded-xl overflow-hidden">
         <FlickeringGrid
@@ -19,27 +23,25 @@ export default function ContactSection() {
           }}
         />
       </div>
-      <div className="relative flex flex-col items-center gap-4 text-center">
-        <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-          Get in Touch
-        </h2>
-        <p className="mx-auto max-w-lg text-muted-foreground text-balance">
-          想聊聊？直接发邮件到{" "}
+      <div className="relative flex flex-col items-center gap-6 text-center">
+        <p className="text-muted-foreground text-balance">{DATA.ui.contactDesc}</p>
+        <div className="flex gap-3">
+          <Link
+            href={DATA.resumeUrl}
+            target="_blank"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition"
+          >
+            <FileDown className="size-4" />
+            {DATA.ui.downloadResume}
+          </Link>
           <Link
             href={`mailto:${DATA.contact.email}`}
-            className="text-blue-500 hover:underline underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-border text-sm font-medium hover:bg-muted transition"
           >
-            {DATA.contact.email}
+            <Mail className="size-4" />
+            {DATA.ui.sendEmail}
           </Link>
-          ，我会尽快回复。
-        </p>
-        <Link
-          href="/resume.pdf"
-          target="_blank"
-          className="mt-2 inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition"
-        >
-          下载完整简历 (PDF)
-        </Link>
+        </div>
       </div>
     </div>
   );

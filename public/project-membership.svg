@@ -1,7 +1,58 @@
-<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
-  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#8a83ff"/><stop offset="100%" stop-color="#5b3fd1"/></linearGradient></defs>
-  <rect width="800" height="400" fill="url(#bg)"/>
-  <text x="400" y="150" fill="#fff" font-family="system-ui,sans-serif" font-size="72" font-weight="700" text-anchor="middle">+480% 收益</text>
-  <text x="400" y="240" fill="#fff" font-family="system-ui,sans-serif" font-size="26" text-anchor="middle" opacity="0.65">围绕抢票焦虑设计权益</text>
-  <text x="400" y="280" fill="#fff" font-family="system-ui,sans-serif" font-size="26" text-anchor="middle" opacity="0.65">从0搭建千万级会员体系</text>
+<svg width="800" height="400" viewBox="0 0 800 400" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="付费会员体系 — 千万级会员渗透">
+  <defs>
+    <linearGradient id="mem-bg" x1="0" y1="0" x2="800" y2="400" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="oklch(28% 0.11 285)"/>
+      <stop offset="0.55" stop-color="oklch(44% 0.17 282)"/>
+      <stop offset="1" stop-color="oklch(62% 0.16 280)"/>
+    </linearGradient>
+    <linearGradient id="mem-film" x1="0" y1="0" x2="0" y2="400" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.08"/>
+      <stop offset="0.2" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="0.74" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0.26"/>
+    </linearGradient>
+    <linearGradient id="mem-card" x1="0" y1="0" x2="220" y2="140" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.08"/>
+    </linearGradient>
+    <pattern id="mem-grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M24 0H0V24" fill="none" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="mem-mask" cx="0.5" cy="0.4" r="0.55">
+      <stop offset="0.3" stop-color="#fff"/><stop offset="0.75" stop-color="#000"/>
+    </radialGradient>
+    <mask id="mem-gridmask"><rect width="800" height="400" fill="url(#mem-mask)"/></mask>
+    <clipPath id="mem-clip"><rect width="800" height="400"/></clipPath>
+  </defs>
+  <g clip-path="url(#mem-clip)">
+    <rect width="800" height="400" fill="url(#mem-bg)"/>
+    <rect width="800" height="400" fill="url(#mem-grid)" mask="url(#mem-gridmask)"/>
+
+    <text x="56" y="148" font-family="Geist, system-ui, sans-serif" font-size="84" font-weight="700" letter-spacing="-3" fill="#ffffff">+480%</text>
+    <text x="60" y="188" font-family="Geist Mono, ui-monospace, monospace" font-size="20" fill="#ffffff" fill-opacity="0.62">Revenue YoY</text>
+    <text x="60" y="216" font-family="Geist Mono, ui-monospace, monospace" font-size="20" fill="#ffffff" fill-opacity="0.62">收益同比</text>
+
+    <!-- 会员卡 -->
+    <g transform="translate(508 70) rotate(-5)">
+      <rect x="0" y="0" width="232" height="148" rx="18" fill="url(#mem-card)" stroke="#ffffff" stroke-opacity="0.28" stroke-width="1.5"/>
+      <!-- 钻石标识 -->
+      <path d="M186 28L200 50L186 72L172 50Z" fill="#ffffff" fill-opacity="0.55"/>
+      <path d="M186 28L200 50L186 72" fill="#ffffff" fill-opacity="0.3"/>
+      <rect x="24" y="28" width="100" height="11" rx="5.5" fill="#ffffff" fill-opacity="0.42"/>
+      <rect x="24" y="48" width="62" height="7" rx="3.5" fill="#ffffff" fill-opacity="0.25"/>
+      <!-- 权益块 -->
+      <rect x="24" y="86" width="56" height="36" rx="8" fill="#ffffff" fill-opacity="0.14"/>
+      <rect x="88" y="86" width="56" height="36" rx="8" fill="#ffffff" fill-opacity="0.14"/>
+      <rect x="152" y="86" width="56" height="36" rx="8" fill="#ffffff" fill-opacity="0.14"/>
+    </g>
+
+    <!-- 增长线 -->
+    <g transform="translate(520 248)">
+      <polyline points="0,80 36,68 72,56 108,40 144,22 180,10 216,2" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="216" cy="2" r="6" fill="#ffffff"/>
+      <circle cx="216" cy="2" r="12" fill="#ffffff" fill-opacity="0.25"/>
+    </g>
+
+    <rect width="800" height="400" fill="url(#mem-film)"/>
+  </g>
 </svg>

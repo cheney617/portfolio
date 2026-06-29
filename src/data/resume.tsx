@@ -1,30 +1,15 @@
 import { Icons } from "@/components/icons";
 import { HomeIcon, NotebookIcon } from "lucide-react";
 
-export const DATA = {
+const SHARED = {
   name: "Xin Chen",
   initials: "XC",
   url: "https://xinchen.co",
   location: "Shanghai / Sydney",
   locationLink: "https://www.google.com/maps/place/sydney",
-  description:
-    "9年C端产品 · 从单点业务到完整商业链路负责人 · 深度实践AI×产品",
-  summary:
-    "9年C端产品经验，从单点用户交互/转化产品成长为完整商业链路负责人。在TikTok LIVE主导直播订阅会员的支付转化能力搭建，以及留资商业化工具的建设，跨6+团队协调推动复杂项目落地；在携程从0搭建千万级付费会员体系，5年5次晋升。具备将AI能力产品化的实践经验——主导AI模型在用户转化场景的落地（私信转化+35%），同时将AI系统性融入PM工作流（数据监控/PRD生成/Case Review）。获TikTok LIVE 2026 Hackathon冠军，海外全英文办公3年。",
   avatarUrl: "/me.png",
-  skills: [
-    { name: "商业策略", icon: (_props: any) => null },
-    { name: "从0到1", icon: (_props: any) => null },
-    { name: "增长", icon: (_props: any) => null },
-    { name: "支付基建", icon: (_props: any) => null },
-    { name: "AI产品", icon: (_props: any) => null },
-    { name: "数据驱动", icon: (_props: any) => null },
-    { name: "团队管理", icon: (_props: any) => null },
-    { name: "全英文办公", icon: (_props: any) => null },
-  ],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
-    { href: "/blog", icon: NotebookIcon, label: "Blog" },
   ],
   contact: {
     email: "chenxin.2517@gmail.com",
@@ -44,7 +29,7 @@ export const DATA = {
       },
       Resume: {
         name: "Resume",
-        url: "/resume.pdf",
+        url: "/resume-zh.pdf",
         icon: Icons.globe,
         navbar: true,
       },
@@ -56,7 +41,41 @@ export const DATA = {
       },
     },
   },
+  education: [
+    {
+      school: { zh: "大连理工大学", en: "Dalian University of Technology" },
+      href: "https://www.dlut.edu.cn",
+      degree: { zh: "硕士 · 环境科学与工程", en: "M.S. Environmental Science & Engineering" },
+      logoUrl: "/dlutlogos.png",
+      start: "2014",
+      end: "2017",
+    },
+    {
+      school: { zh: "东南大学", en: "Southeast University" },
+      href: "https://www.seu.edu.cn",
+      degree: { zh: "本科 · 环境工程", en: "B.E. Environmental Engineering" },
+      logoUrl: "/SEUlogo.png",
+      start: "2010",
+      end: "2014",
+    },
+  ],
+};
 
+export const DATA_ZH = {
+  ...SHARED,
+  description: "9年C端产品 · 从单点业务到完整商业链路负责人 · 深度实践AI×产品",
+  summary: "9年C端产品经验，从单点用户交互/转化产品成长为完整商业链路负责人。在TikTok LIVE主导直播订阅会员的支付转化能力搭建，以及留资商业化工具的建设，跨6+团队协调推动复杂项目落地；在携程从0搭建千万级付费会员体系，5年5次晋升。具备将AI能力产品化的实践经验——主导AI模型在用户转化场景的落地（私信转化+35%），同时将AI系统性融入PM工作流（数据监控/PRD生成/Case Review）。获TikTok LIVE 2026 Hackathon冠军，海外全英文办公3年。",
+  resumeUrl: "/resume-zh.pdf",
+  skills: [
+    { name: "商业策略", icon: (_props: any) => null },
+    { name: "从0到1", icon: (_props: any) => null },
+    { name: "增长", icon: (_props: any) => null },
+    { name: "支付基建", icon: (_props: any) => null },
+    { name: "AI产品", icon: (_props: any) => null },
+    { name: "数据驱动", icon: (_props: any) => null },
+    { name: "团队管理", icon: (_props: any) => null },
+    { name: "全英文办公", icon: (_props: any) => null },
+  ],
   work: [
     {
       company: "字节跳动 · TikTok LIVE",
@@ -67,8 +86,7 @@ export const DATA = {
       logoUrl: "/tiktok-logo_1080029-103.avif",
       start: "Jul 2022",
       end: "Present",
-      description:
-        "前期负责直播订阅会员的用户转化和支付POC；后期转型留资业务，帮助线上服务型主播（律师、教练、设计师等）在直播中获得潜在用户并完成深度转化，同时担任主播经营工具和生态治理方向POC。拥有丰富的跨团队协调与推动项目落地的经验。",
+      description: "前期负责直播订阅会员的用户转化和支付POC；后期转型留资业务，帮助线上服务型主播（律师、教练、设计师等）在直播中获得潜在用户并完成深度转化，同时担任主播经营工具和生态治理方向POC。拥有丰富的跨团队协调与推动项目落地的经验。",
     },
     {
       company: "携程 · 智行火车票",
@@ -79,181 +97,195 @@ export const DATA = {
       logoUrl: "/ctriplogo.png",
       start: "Jul 2017",
       end: "Jul 2022",
-      description:
-        "前期负责微信小程序抢票增长（春节期间千万级DAU）；中期担任会员及公共平台产品负责人（5人团队），从0搭建付费会员和等级积分体系；后期担任汽车票新产品线负责人（管理4人团队）。5年5次晋升。",
-    },
-  ],
-  education: [
-    {
-      school: "大连理工大学",
-      href: "https://www.dlut.edu.cn",
-      degree: "硕士 · 环境科学与工程",
-      logoUrl: "/dlutlogos.png",
-      start: "2014",
-      end: "2017",
-    },
-    {
-      school: "东南大学",
-      href: "https://www.seu.edu.cn",
-      degree: "本科 · 环境工程",
-      logoUrl: "/SEUlogo.png",
-      start: "2010",
-      end: "2014",
+      description: "前期负责微信小程序抢票增长（春节期间千万级DAU）；中期担任会员及公共平台产品负责人（5人团队），从0搭建付费会员和等级积分体系；后期担任汽车票新产品线负责人（管理4人团队）。5年5次晋升。",
     },
   ],
   projects: [
     {
-      title: "TikTok 订阅支付体系",
-      href: "/projects/subscription",
-      dates: "Jul 2022 - Oct 2024",
-      active: false,
-      description:
-        "TikTok直播订阅早期仅支持一口价，主播无法灵活定价。三步迭代：自定义定价→多档位套餐+升降级→差异化定价策略推荐。被订阅数+12%，收入+10%。",
-      technologies: [
-        "Payment Infra",
-        "Pricing Strategy",
-        "Subscription",
-        "POC",
-      ],
-      links: [
-        {
-          type: "详情",
-          href: "/projects/subscription",
-          icon: <Icons.globe className="size-3" />,
-        },
-      ],
-      image: "/project-subscription.svg",
-      video: "",
+      title: "TikTok 订阅支付体系", href: "/projects/subscription", dates: "Jul 2022 - Oct 2024", active: false,
+      description: "TikTok直播订阅早期仅支持一口价，主播无法灵活定价。三步迭代：自定义定价→多档位套餐+升降级→差异化定价策略推荐。被订阅数+12%，收入+10%。",
+      technologies: ["Payment Infra", "Pricing Strategy", "Subscription", "POC"],
+      links: [{ type: "详情", href: "/projects/subscription", icon: <Icons.globe className="size-3" /> }],
+      image: "/project-subscription.svg", video: "",
     },
     {
-      title: "直播私信转化提效",
-      href: "/projects/dm-tools",
-      dates: "Sep 2025 - Present",
-      active: true,
-      description:
-        "留资主播缺少有效的私信转化工具导致潜在客户流失。诊断3个断裂点，搭建私信引导工具矩阵，主导AI识别模型产品化落地。私信转化+35%，人均线索率+25%。",
-      technologies: [
-        "AI Model",
-        "Conversion",
-        "B2C Tools",
-        "Data Dashboard",
-      ],
-      links: [
-        {
-          type: "详情",
-          href: "/projects/dm-tools",
-          icon: <Icons.globe className="size-3" />,
-        },
-      ],
-      image: "/project-dm.svg",
-      video: "",
+      title: "直播私信转化提效", href: "/projects/dm-tools", dates: "Sep 2025 - Present", active: true,
+      description: "留资主播缺少有效的私信转化工具导致潜在客户流失。诊断3个断裂点，搭建私信引导工具矩阵，主导AI识别模型产品化落地。私信转化+35%，人均线索率+25%。",
+      technologies: ["AI Model", "Conversion", "B2C Tools", "Data Dashboard"],
+      links: [{ type: "详情", href: "/projects/dm-tools", icon: <Icons.globe className="size-3" /> }],
+      image: "/project-dm.svg", video: "",
     },
     {
-      title: "直播留资开放生态",
-      href: "/projects/open-ecosystem",
-      dates: "Jun 2025 - Present",
-      active: true,
-      description:
-        "平台自建工具与主播已有三方工具存在结构性矛盾。通过双线MVP验证，输出开放生态战略提案，与Leadership达成一致，推动数据归因和开放平台搭建。CTR+100%，线索转化率+100%。",
-      technologies: [
-        "Product Strategy",
-        "Data Analysis",
-        "A/B Testing",
-        "Cross-team",
-      ],
-      links: [
-        {
-          type: "详情",
-          href: "/projects/open-ecosystem",
-          icon: <Icons.globe className="size-3" />,
-        },
-      ],
-      image: "/project-ecosystem.svg",
-      video: "",
+      title: "直播留资开放生态", href: "/projects/open-ecosystem", dates: "Jun 2025 - Present", active: true,
+      description: "平台自建工具与主播已有三方工具存在结构性矛盾。通过双线MVP验证，输出开放生态战略提案，推动数据归因和开放平台搭建。留资工具CTR+100%，开播留存净提升+12~16pp。",
+      technologies: ["Product Strategy", "Data Analysis", "A/B Testing", "Cross-team"],
+      links: [{ type: "详情", href: "/projects/open-ecosystem", icon: <Icons.globe className="size-3" /> }],
+      image: "/project-ecosystem.svg", video: "",
     },
     {
-      title: "智行付费会员体系",
-      href: "/projects/membership",
-      dates: "Jul 2018 - Jan 2022",
-      active: false,
-      description:
-        "围绕火车票用户「抢不到票」的核心焦虑，从0搭建付费会员体系。设计三类场景权益（抢票/出行/商旅）+等级积分体系+试用模式引导转化。付费会员近千万，收益同比+480%，入围CEO大奖。",
-      technologies: [
-        "Membership",
-        "Monetization",
-        "User Growth",
-        "Team Lead",
-      ],
-      links: [
-        {
-          type: "详情",
-          href: "/projects/membership",
-          icon: <Icons.globe className="size-3" />,
-        },
-      ],
-      image: "/project-membership.svg",
-      video: "",
+      title: "智行付费会员体系", href: "/projects/membership", dates: "Jul 2018 - Jan 2022", active: false,
+      description: "围绕火车票用户「抢不到票」的核心焦虑，从0搭建付费会员体系。设计三类场景权益+等级积分体系+试用模式引导转化。付费会员近千万，收益同比+480%，入围CEO大奖。",
+      technologies: ["Membership", "Monetization", "User Growth", "Team Lead"],
+      links: [{ type: "详情", href: "/projects/membership", icon: <Icons.globe className="size-3" /> }],
+      image: "/project-membership.svg", video: "",
     },
     {
-      title: "经营工具与生态治理",
-      href: "/projects/service-governance",
-      dates: "Nov 2024 - Jun 2026",
-      active: false,
-      description:
-        "从0搭建经营工具入口，集成多个线索收集工具；设计准入清退门槛，协调6+团队推动行业认证上线，确保工具只放给有资质的作者。留资作者+23%，开播留存+15%，目标作者浓度>80%。",
+      title: "经营工具与生态治理", href: "/projects/service-governance", dates: "Nov 2024 - Jun 2026", active: false,
+      description: "从0搭建经营工具入口，集成多个线索收集工具；设计准入清退门槛，协调6+团队推动行业认证上线。留资作者+23%，开播留存+15%，目标作者浓度>80%。",
       technologies: ["从0到1", "Creator Tools", "Governance", "Cross-team"],
-      links: [
-        {
-          type: "详情",
-          href: "/projects/service-governance",
-          icon: <Icons.globe className="size-3" />,
-        },
-      ],
-      image: "/project-serviceplus.svg",
-      video: "",
+      links: [{ type: "详情", href: "/projects/service-governance", icon: <Icons.globe className="size-3" /> }],
+      image: "/project-serviceplus.svg", video: "",
     },
     {
-      title: "智行微信小程序增长",
-      href: "",
-      dates: "2017 - 2022",
-      active: false,
-      description:
-        "作为微信小程序抢票增长方向POC，最早引领抢票裂变玩法，春节期间实现千万级访问DAU。负责小程序功能搭建、新客增长和汽车票产品线。",
+      title: "智行微信小程序增长", href: "", dates: "2017 - 2022", active: false,
+      description: "作为微信小程序抢票增长方向POC，最早引领抢票裂变玩法，春节期间实现千万级访问DAU。",
       technologies: ["WeChat Mini Program", "Growth", "Viral"],
-      links: [],
-      image: "/project-growth.svg",
-      video: "",
+      links: [], image: "/project-growth.svg", video: "",
     },
   ],
   hackathons: [
     {
-      title: "AI直播互动游戏（Hackathon冠军）",
-      dates: "June 2026",
-      location: "ByteDance Hackathon, Sydney",
-      description:
-        "负责核心交互设计、内容模型输出以及模型评测。实现用户评论实时改变游戏剧情与角色——智能识别可触发交互的用户评论；设计模型队列分别生成对应场景剧情并设定优先级；将剧情实时更新至主播侧，由主播决定走向后实时同步给观众，确保双端体验流畅。1天完成产品Demo开发，获TikTok LIVE 2026 Hackathon冠军。",
-      image: "",
-      links: [
-        {
-          title: "Demo",
-          icon: <Icons.globe className="h-4 w-4" />,
-          href: "https://ai-game-jam.vercel.app/wasteland/WASTELAND%20LIVE%20(Viewer).html",
-        },
-        {
-          title: "Source",
-          icon: <Icons.github className="h-4 w-4" />,
-          href: "https://github.com/CNLarrylai/ai-game-jam",
-        },
+      title: "AI直播互动游戏（Hackathon冠军）", dates: "June 2026", location: "ByteDance Hackathon, Sydney",
+      description: "负责核心交互设计、内容模型输出以及模型评测。实现用户评论实时改变游戏剧情与角色。1天完成产品Demo开发，获TikTok LIVE 2026 Hackathon冠军。",
+      image: "", links: [
+        { title: "Demo", icon: <Icons.globe className="h-4 w-4" />, href: "https://ai-game-jam.vercel.app/wasteland/WASTELAND%20LIVE%20(Viewer).html" },
+        { title: "Source", icon: <Icons.github className="h-4 w-4" />, href: "https://github.com/CNLarrylai/ai-game-jam" },
       ],
     },
     {
-      title: "AI深度融入PM工作流",
-      dates: "2025 - Present",
-      location: "日常实践",
-      description:
-        "使用Claude Code连接飞书CLI获取文档及数据库权限，利用AI自动生成SQL进行数据查询，自动检索头部作者功能使用数据并定时推送分析报告。利用Claude Code自动生成PRD框架与交互细节Prompt，配合Claude Design生成原型图，基于评审纪要自动更新文档。",
-      image: "",
-      links: [],
+      title: "AI深度融入PM工作流", dates: "2025 - Present", location: "日常实践",
+      description: "使用Claude Code连接飞书CLI，AI自动生成SQL查询+定时推送分析报告。自动生成PRD框架与原型图，基于评审纪要自动更新文档。",
+      image: "", links: [],
     },
   ],
-} as const;
+  ui: {
+    about: "About",
+    work: "Work Experience",
+    education: "Education",
+    skills: "Skills",
+    projectsTag: "Projects",
+    projectsDesc: "以下是我主导的重点项目，涵盖商业化、增长、支付基建和AI应用等方向。",
+    aiTag: "AI Practice",
+    aiDesc: "从用AI辅助工作，到用AI构建产品能力本身。",
+    contactTag: "Contact",
+    contactDesc: "欢迎聊聊机会、合作，或任何关于产品与 AI 的想法。",
+    downloadResume: "下载简历",
+    sendEmail: "发送邮件",
+  },
+};
+
+export const DATA_EN = {
+  ...SHARED,
+  description: "9 Years in Consumer Product · Subscription Payment to Creator Lead Generation · AI × Product",
+  summary: "Senior Product Manager with 9 years of consumer product experience. Led subscription payment infrastructure and creator lead-generation tools at TikTok LIVE; built a multi-million-user paid membership system at Ctrip (Trip.com Group). Experienced in productizing AI models into user conversion workflows. 3 years in an English-speaking work environment.",
+  resumeUrl: "/resume-en.pdf",
+  skills: [
+    { name: "Business Strategy", icon: (_props: any) => null },
+    { name: "Zero-to-One", icon: (_props: any) => null },
+    { name: "Growth", icon: (_props: any) => null },
+    { name: "Payment Infra", icon: (_props: any) => null },
+    { name: "AI Product", icon: (_props: any) => null },
+    { name: "Data-driven", icon: (_props: any) => null },
+    { name: "Team Lead", icon: (_props: any) => null },
+    { name: "English Fluency", icon: (_props: any) => null },
+  ],
+  work: [
+    {
+      company: "ByteDance · TikTok LIVE",
+      href: "https://www.tiktok.com",
+      badges: [],
+      location: "Sydney, Australia",
+      title: "Product Manager",
+      logoUrl: "/tiktok-logo_1080029-103.avif",
+      start: "Jul 2022",
+      end: "Present",
+      description: "Led subscription payment in early phase, building pricing infrastructure and user conversion. Later transitioned to lead-generation business, helping service-oriented creators acquire potential clients through live streaming. Owned creator lead-generation tools and platform governance. Coordinated 6+ cross-functional teams to drive projects to launch.",
+    },
+    {
+      company: "Ctrip (Trip.com Group)",
+      href: "https://www.ctrip.com",
+      badges: [],
+      location: "Shanghai, China",
+      title: "Product Manager",
+      logoUrl: "/ctriplogo.png",
+      start: "Jul 2017",
+      end: "Jul 2022",
+      description: "Led WeChat Mini Program growth (10M+ DAU during Chinese New Year); then served as membership & platform product lead (5-person team), building paid membership and loyalty system from scratch; later led new product line (4-person team). 5 promotions in 5 years.",
+    },
+  ],
+  projects: [
+    {
+      title: "Subscription Payment Infrastructure", href: "/projects/subscription", dates: "Jul 2022 - Oct 2024", active: false,
+      description: "Built subscription payment from fixed pricing to custom pricing, multi-tier plans, and data-driven pricing recommendations. Subscription rate +12%, revenue +10%.",
+      technologies: ["Payment Infra", "Pricing Strategy", "Subscription", "POC"],
+      links: [{ type: "Details", href: "/projects/subscription", icon: <Icons.globe className="size-3" /> }],
+      image: "/project-subscription.svg", video: "",
+    },
+    {
+      title: "DM Conversion Optimization with AI", href: "/projects/dm-tools", dates: "Sep 2025 - Present", active: true,
+      description: "Diagnosed 3 funnel breakpoints, shipped DM toolkit + AI intent model. DM conversion +35%, per-creator lead rate +25%.",
+      technologies: ["AI Model", "Conversion", "B2C Tools", "Data Dashboard"],
+      links: [{ type: "Details", href: "/projects/dm-tools", icon: <Icons.globe className="size-3" /> }],
+      image: "/project-dm.svg", video: "",
+    },
+    {
+      title: "Open Platform for Lead Generation", href: "/projects/open-ecosystem", dates: "Jun 2025 - Present", active: true,
+      description: "Identified structural conflict between platform tools and creators' third-party tools. Ran dual-track MVP, delivered strategic proposal. Lead tool CTR +100%, streaming retention +12~16pp.",
+      technologies: ["Product Strategy", "Data Analysis", "A/B Testing", "Cross-team"],
+      links: [{ type: "Details", href: "/projects/open-ecosystem", icon: <Icons.globe className="size-3" /> }],
+      image: "/project-ecosystem.svg", video: "",
+    },
+    {
+      title: "Paid Membership System", href: "/projects/membership", dates: "Jul 2018 - Jan 2022", active: false,
+      description: "Built paid membership from scratch around ticket-booking anxiety. ~10M members, revenue +480% YoY, CEO Award nominee.",
+      technologies: ["Membership", "Monetization", "User Growth", "Team Lead"],
+      links: [{ type: "Details", href: "/projects/membership", icon: <Icons.globe className="size-3" /> }],
+      image: "/project-membership.svg", video: "",
+    },
+    {
+      title: "Creator Tools & Governance", href: "/projects/service-governance", dates: "Nov 2024 - Jun 2026", active: false,
+      description: "Built creator operation tools from scratch, designed access/suspension standards, coordinated 6+ teams for industry certification. Lead-gen creators +23%, streaming retention +15%.",
+      technologies: ["0-to-1", "Creator Tools", "Governance", "Cross-team"],
+      links: [{ type: "Details", href: "/projects/service-governance", icon: <Icons.globe className="size-3" /> }],
+      image: "/project-serviceplus.svg", video: "",
+    },
+    {
+      title: "WeChat Mini Program Growth", href: "", dates: "2017 - 2022", active: false,
+      description: "Pioneered viral ticket-grabbing mechanics on WeChat Mini Program. 10M+ DAU during Chinese New Year peak.",
+      technologies: ["WeChat Mini Program", "Growth", "Viral"],
+      links: [], image: "/project-growth.svg", video: "",
+    },
+  ],
+  hackathons: [
+    {
+      title: "AI Live Interactive Game (Hackathon Champion)", dates: "June 2026", location: "ByteDance Hackathon, Sydney",
+      description: "Designed core interaction and AI content generation pipeline — real-time comment classification → narrative generation → host-viewer sync. Shipped demo in 1 day. TikTok LIVE 2026 Hackathon Champion.",
+      image: "", links: [
+        { title: "Demo", icon: <Icons.globe className="h-4 w-4" />, href: "https://ai-game-jam.vercel.app/wasteland/WASTELAND%20LIVE%20(Viewer).html" },
+        { title: "Source", icon: <Icons.github className="h-4 w-4" />, href: "https://github.com/CNLarrylai/ai-game-jam" },
+      ],
+    },
+    {
+      title: "AI-Powered PM Workflow", dates: "2025 - Present", location: "Daily Practice",
+      description: "Auto-generated SQL via Claude Code + Lark CLI, automated data retrieval and scheduled report delivery. Auto-generated PRD frameworks and prototypes, auto-updated docs from review notes.",
+      image: "", links: [],
+    },
+  ],
+  ui: {
+    about: "About",
+    work: "Work Experience",
+    education: "Education",
+    skills: "Skills",
+    projectsTag: "Projects",
+    projectsDesc: "Key projects spanning monetization, growth, payment infrastructure, and AI.",
+    aiTag: "AI Practice",
+    aiDesc: "From using AI as a tool to building AI into the product itself.",
+    contactTag: "Contact",
+    contactDesc: "Open to opportunities, collaborations, or conversations about product & AI.",
+    downloadResume: "Download Resume",
+    sendEmail: "Send Email",
+  },
+};
+
+// Default export for backward compatibility
+export const DATA = DATA_ZH;

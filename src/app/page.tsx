@@ -1,19 +1,23 @@
 /* eslint-disable @next/next/no-img-element */
+"use client";
+
 import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { DATA } from "@/data/resume";
-import Link from "next/link";
+import { useData } from "@/data/use-data";
+import { useLanguage } from "@/components/language-provider";
 import Markdown from "react-markdown";
 import ContactSection from "@/components/section/contact-section";
 import HackathonsSection from "@/components/section/hackathons-section";
 import ProjectsSection from "@/components/section/projects-section";
 import WorkSection from "@/components/section/work-section";
-import { ArrowUpRight } from "lucide-react";
 
 const BLUR_FADE_DELAY = 0.04;
 
 export default function Page() {
+  const DATA = useData();
+  const { lang } = useLanguage();
+
   return (
     <main className="min-h-dvh flex flex-col gap-14 relative">
       <section id="hero">
@@ -24,7 +28,7 @@ export default function Page() {
                 delay={BLUR_FADE_DELAY}
                 className="text-3xl font-semibold tracking-tighter sm:text-4xl lg:text-5xl"
                 yOffset={8}
-                text={`Hi, I'm ${DATA.name.split(" ")[0]}`}
+                text={lang === "zh" ? "Hi，我是陈昕" : `Hi, I'm ${DATA.name.split(" ")[0]}`}
               />
               <BlurFadeText
                 className="text-muted-foreground max-w-[600px] md:text-lg lg:text-xl"
@@ -41,39 +45,40 @@ export default function Page() {
           </div>
         </div>
       </section>
+
       <section id="about">
         <div className="flex min-h-0 flex-col gap-y-4">
           <BlurFade delay={BLUR_FADE_DELAY * 3}>
-            <h2 className="text-xl font-bold">About</h2>
+            <h2 className="text-xl font-bold">{DATA.ui.about}</h2>
           </BlurFade>
           <BlurFade delay={BLUR_FADE_DELAY * 4}>
             <div className="prose max-w-full text-pretty font-sans leading-relaxed text-muted-foreground dark:prose-invert">
-              <Markdown>
-                {DATA.summary}
-              </Markdown>
+              <Markdown>{DATA.summary}</Markdown>
             </div>
           </BlurFade>
         </div>
       </section>
+
       <section id="work">
         <div className="flex min-h-0 flex-col gap-y-6">
           <BlurFade delay={BLUR_FADE_DELAY * 5}>
-            <h2 className="text-xl font-bold">Work Experience</h2>
+            <h2 className="text-xl font-bold">{DATA.ui.work}</h2>
           </BlurFade>
           <BlurFade delay={BLUR_FADE_DELAY * 6}>
             <WorkSection />
           </BlurFade>
         </div>
       </section>
+
       <section id="education">
         <div className="flex min-h-0 flex-col gap-y-6">
           <BlurFade delay={BLUR_FADE_DELAY * 7}>
-            <h2 className="text-xl font-bold">Education</h2>
+            <h2 className="text-xl font-bold">{DATA.ui.education}</h2>
           </BlurFade>
           <div className="flex flex-col gap-8">
             {DATA.education.map((education, index) => (
               <BlurFade
-                key={education.school}
+                key={typeof education.school === "string" ? education.school : education.school.zh}
                 delay={BLUR_FADE_DELAY * 8 + index * 0.05}
               >
                 <div className="flex items-center gap-x-3 justify-between">
@@ -81,7 +86,7 @@ export default function Page() {
                     {education.logoUrl ? (
                       <img
                         src={education.logoUrl}
-                        alt={education.school}
+                        alt={typeof education.school === "string" ? education.school : education.school[lang]}
                         className="size-8 md:size-10 p-1 border rounded-full shadow ring-2 ring-border overflow-hidden object-contain flex-none"
                       />
                     ) : (
@@ -89,17 +94,15 @@ export default function Page() {
                     )}
                     <div className="flex-1 min-w-0 flex flex-col gap-0.5">
                       <div className="font-semibold leading-none">
-                        {education.school}
+                        {typeof education.school === "string" ? education.school : education.school[lang]}
                       </div>
                       <div className="font-sans text-sm text-muted-foreground">
-                        {education.degree}
+                        {typeof education.degree === "string" ? education.degree : education.degree[lang]}
                       </div>
                     </div>
                   </div>
                   <div className="flex items-center gap-1 text-xs tabular-nums text-muted-foreground text-right flex-none">
-                    <span>
-                      {education.start} - {education.end}
-                    </span>
+                    <span>{education.start} - {education.end}</span>
                   </div>
                 </div>
               </BlurFade>
@@ -107,16 +110,16 @@ export default function Page() {
           </div>
         </div>
       </section>
+
       <section id="skills">
         <div className="flex min-h-0 flex-col gap-y-4">
           <BlurFade delay={BLUR_FADE_DELAY * 9}>
-            <h2 className="text-xl font-bold">Skills</h2>
+            <h2 className="text-xl font-bold">{DATA.ui.skills}</h2>
           </BlurFade>
           <div className="flex flex-wrap gap-2">
             {DATA.skills.map((skill, id) => (
               <BlurFade key={skill.name} delay={BLUR_FADE_DELAY * 10 + id * 0.05}>
-                <div className="border bg-background border-border ring-2 ring-border/20 rounded-xl h-8 w-fit px-4 flex items-center gap-2">
-                  {skill.icon && <skill.icon className="size-4 rounded overflow-hidden object-contain" />}
+                <div className="bg-muted rounded-lg h-8 w-fit px-4 flex items-center gap-2 cursor-default">
                   <span className="text-foreground text-sm font-medium">{skill.name}</span>
                 </div>
               </BlurFade>
@@ -124,16 +127,19 @@ export default function Page() {
           </div>
         </div>
       </section>
+
       <section id="projects">
         <BlurFade delay={BLUR_FADE_DELAY * 11}>
           <ProjectsSection />
         </BlurFade>
       </section>
+
       <section id="hackathons">
         <BlurFade delay={BLUR_FADE_DELAY * 13}>
           <HackathonsSection />
         </BlurFade>
       </section>
+
       <section id="contact">
         <BlurFade delay={BLUR_FADE_DELAY * 16}>
           <ContactSection />

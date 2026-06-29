@@ -1,7 +1,8 @@
 import Navbar from "@/components/navbar";
 import { ThemeProvider } from "@/components/theme-provider";
+import { LanguageProvider } from "@/components/language-provider";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { DATA } from "@/data/resume";
+import { DATA_ZH as DATA } from "@/data/resume";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
@@ -70,7 +71,8 @@ export default function RootLayout({
           geistMono.variable
         )}
       >
-        <ThemeProvider attribute="class" defaultTheme="light">
+        <ThemeProvider attribute="data-theme" defaultTheme="light">
+          <LanguageProvider>
           <TooltipProvider delayDuration={0}>
             <div className="absolute inset-0 top-0 left-0 right-0 h-[100px] overflow-hidden z-0">
               <FlickeringGrid
@@ -88,6 +90,7 @@ export default function RootLayout({
             </div>
             <Navbar />
           </TooltipProvider>
+          </LanguageProvider>
         </ThemeProvider>
       </body>
     </html>

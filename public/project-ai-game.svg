@@ -1,6 +1,77 @@
-<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
-  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#46c7ff"/><stop offset="100%" stop-color="#2b7fe0"/></linearGradient></defs>
-  <rect width="800" height="400" fill="url(#bg)"/>
-  <text x="400" y="150" fill="#fff" font-family="system-ui,sans-serif" font-size="72" font-weight="700" text-anchor="middle">Hackathon冠军</text>
-  <text x="400" y="250" fill="#fff" font-family="system-ui,sans-serif" font-size="26" text-anchor="middle" opacity="0.65">评论驱动AI叙事，1天完成可玩Demo</text>
+<svg width="800" height="400" viewBox="0 0 800 400" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AI 直播互动游戏 — LIVE Hackathon 冠军">
+  <defs>
+    <linearGradient id="ail-bg" x1="0" y1="0" x2="0" y2="400" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="oklch(22% 0.08 280)"/>
+      <stop offset="1" stop-color="oklch(15% 0.05 275)"/>
+    </linearGradient>
+    <linearGradient id="ail-film" x1="0" y1="0" x2="0" y2="400" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.06"/>
+      <stop offset="0.2" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="0.74" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0.3"/>
+    </linearGradient>
+    <pattern id="ail-grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M24 0H0V24" fill="none" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="ail-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="oklch(72% 0.16 290)" stop-opacity="0.55"/>
+      <stop offset="0.7" stop-color="oklch(72% 0.16 290)" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="ail-mask" cx="0.5" cy="0.45" r="0.6">
+      <stop offset="0.3" stop-color="#fff"/><stop offset="0.8" stop-color="#000"/>
+    </radialGradient>
+    <mask id="ail-gridmask"><rect width="800" height="400" fill="url(#ail-mask)"/></mask>
+    <clipPath id="ail-clip"><rect width="800" height="400"/></clipPath>
+  </defs>
+  <g clip-path="url(#ail-clip)">
+    <rect width="800" height="400" fill="url(#ail-bg)"/>
+    <rect width="800" height="400" fill="url(#ail-grid)" mask="url(#ail-gridmask)"/>
+
+    <!-- 中心 AI 辉光 -->
+    <circle cx="400" cy="190" r="150" fill="url(#ail-glow)"/>
+
+    <!-- LIVE 徽标 -->
+    <rect x="32" y="32" width="62" height="26" rx="6" fill="oklch(63% 0.21 25 / 0.95)"/>
+    <circle cx="48" cy="45" r="4.5" fill="#fff"/>
+    <rect x="58" y="41" width="28" height="8" rx="4" fill="#ffffff" fill-opacity="0.85"/>
+    <!-- 主播信息 -->
+    <circle cx="128" cy="46" r="16" fill="#ffffff" fill-opacity="0.12"/>
+    <rect x="150" y="38" width="52" height="7" rx="3.5" fill="#ffffff" fill-opacity="0.28"/>
+    <rect x="150" y="50" width="34" height="6" rx="3" fill="#ffffff" fill-opacity="0.16"/>
+    <!-- 观看人数 -->
+    <rect x="668" y="34" width="58" height="24" rx="12" fill="#ffffff" fill-opacity="0.08"/>
+    <circle cx="700" cy="46" r="5" fill="oklch(72% 0.16 290 / 0.7)"/>
+
+    <!-- 飘屏弹幕 -->
+    <g opacity="0.32">
+      <circle cx="46" cy="96" r="9" fill="#ffffff" fill-opacity="0.1"/>
+      <rect x="60" y="91" width="96" height="10" rx="5" fill="#ffffff" fill-opacity="0.16"/>
+      <circle cx="62" cy="124" r="9" fill="#ffffff" fill-opacity="0.1"/>
+      <rect x="76" y="119" width="72" height="10" rx="5" fill="#ffffff" fill-opacity="0.12"/>
+    </g>
+
+    <!-- 中心 AI 火花（高对比核心意象） -->
+    <g transform="translate(400 190)">
+      <circle r="58" fill="oklch(28% 0.10 290 / 0.5)" stroke="oklch(80% 0.13 290 / 0.55)" stroke-width="2"/>
+      <path d="M0 -32L7 -10L30 0L7 10L0 32L-7 10L-30 0L-7 -10Z" fill="oklch(92% 0.06 290)"/>
+      <path d="M0 -32L7 -10L30 0L7 10" fill="oklch(96% 0.04 290)"/>
+      <circle r="5" fill="oklch(98% 0.02 290)"/>
+    </g>
+
+    <!-- 底部游戏互动面板 -->
+    <g transform="translate(0 296)">
+      <rect x="32" y="0" width="232" height="40" rx="12" fill="oklch(70% 0.15 255 / 0.2)" stroke="oklch(78% 0.12 255 / 0.35)" stroke-width="1"/>
+      <rect x="284" y="0" width="232" height="40" rx="12" fill="oklch(72% 0.13 80 / 0.2)" stroke="oklch(80% 0.12 80 / 0.35)" stroke-width="1"/>
+      <rect x="536" y="0" width="232" height="40" rx="12" fill="oklch(68% 0.16 160 / 0.2)" stroke="oklch(78% 0.13 160 / 0.35)" stroke-width="1"/>
+      <rect x="118" y="15" width="60" height="10" rx="5" fill="#ffffff" fill-opacity="0.4"/>
+      <rect x="370" y="15" width="60" height="10" rx="5" fill="#ffffff" fill-opacity="0.4"/>
+      <rect x="622" y="15" width="60" height="10" rx="5" fill="#ffffff" fill-opacity="0.4"/>
+    </g>
+    <!-- 输入栏 -->
+    <rect x="32" y="352" width="652" height="34" rx="17" fill="#ffffff" fill-opacity="0.05"/>
+    <circle cx="708" cy="369" r="17" fill="oklch(63% 0.21 25 / 0.55)"/>
+    <circle cx="752" cy="369" r="17" fill="#ffffff" fill-opacity="0.08"/>
+
+    <rect width="800" height="400" fill="url(#ail-film)"/>
+  </g>
 </svg>

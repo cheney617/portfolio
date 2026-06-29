@@ -1,7 +1,57 @@
-<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
-  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f59e0b"/><stop offset="100%" stop-color="#d97706"/></linearGradient></defs>
-  <rect width="800" height="400" fill="url(#bg)"/>
-  <text x="400" y="150" fill="#fff" font-family="system-ui,sans-serif" font-size="72" font-weight="700" text-anchor="middle">+23% 留资作者</text>
-  <text x="400" y="240" fill="#fff" font-family="system-ui,sans-serif" font-size="26" text-anchor="middle" opacity="0.65">从0搭建经营工具</text>
-  <text x="400" y="280" fill="#fff" font-family="system-ui,sans-serif" font-size="26" text-anchor="middle" opacity="0.65">确保好的工具只放给有资质的作者</text>
+<svg width="800" height="400" viewBox="0 0 800 400" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="经营工具与治理 — Service+ 橱窗">
+  <defs>
+    <linearGradient id="svc-bg" x1="0" y1="0" x2="800" y2="400" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="oklch(30% 0.07 70)"/>
+      <stop offset="0.55" stop-color="oklch(48% 0.12 65)"/>
+      <stop offset="1" stop-color="oklch(66% 0.14 62)"/>
+    </linearGradient>
+    <linearGradient id="svc-film" x1="0" y1="0" x2="0" y2="400" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.08"/>
+      <stop offset="0.2" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="0.74" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0.26"/>
+    </linearGradient>
+    <pattern id="svc-grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M24 0H0V24" fill="none" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="svc-mask" cx="0.5" cy="0.4" r="0.55">
+      <stop offset="0.3" stop-color="#fff"/><stop offset="0.75" stop-color="#000"/>
+    </radialGradient>
+    <mask id="svc-gridmask"><rect width="800" height="400" fill="url(#svc-mask)"/></mask>
+    <clipPath id="svc-clip"><rect width="800" height="400"/></clipPath>
+  </defs>
+  <g clip-path="url(#svc-clip)">
+    <rect width="800" height="400" fill="url(#svc-bg)"/>
+    <rect width="800" height="400" fill="url(#svc-grid)" mask="url(#svc-gridmask)"/>
+
+    <!-- 右侧统计 -->
+    <text x="744" y="150" text-anchor="end" font-family="Geist, system-ui, sans-serif" font-size="84" font-weight="700" letter-spacing="-3" fill="#ffffff">+23%</text>
+    <text x="744" y="196" text-anchor="end" font-family="Geist Mono, ui-monospace, monospace" font-size="20" fill="#ffffff" fill-opacity="0.66">Lead-gen creators</text>
+    <text x="744" y="224" text-anchor="end" font-family="Geist Mono, ui-monospace, monospace" font-size="20" fill="#ffffff" fill-opacity="0.66">留资作者</text>
+
+    <!-- Service+ 橱窗手机（白底） -->
+    <g transform="translate(72 48) rotate(-3)">
+      <rect x="0" y="0" width="204" height="332" rx="32" fill="#ffffff" stroke="#000000" stroke-opacity="0.08" stroke-width="2"/>
+      <rect x="80" y="14" width="44" height="8" rx="4" fill="#e5e7eb"/>
+      <!-- Service+ 头部 banner -->
+      <rect x="18" y="36" width="168" height="58" rx="12" fill="#fde68a"/>
+      <circle cx="166" cy="62" r="13" fill="#d97706" fill-opacity="0.28"/>
+      <rect x="34" y="52" width="60" height="9" rx="4.5" fill="#92400e" fill-opacity="0.4"/>
+      <rect x="34" y="68" width="86" height="7" rx="3.5" fill="#92400e" fill-opacity="0.28"/>
+      <!-- 服务卡网格 -->
+      <rect x="18" y="106" width="80" height="64" rx="10" fill="#fafafa" stroke="#e5e7eb" stroke-width="1"/>
+      <rect x="106" y="106" width="80" height="64" rx="10" fill="#fafafa" stroke="#e5e7eb" stroke-width="1"/>
+      <rect x="18" y="182" width="80" height="64" rx="10" fill="#fafafa" stroke="#e5e7eb" stroke-width="1"/>
+      <rect x="106" y="182" width="80" height="64" rx="10" fill="#fafafa" stroke="#e5e7eb" stroke-width="1"/>
+      <circle cx="42" cy="128" r="9" fill="#fcd34d" fill-opacity="0.7"/>
+      <circle cx="130" cy="128" r="9" fill="#fbbf24" fill-opacity="0.6"/>
+      <circle cx="42" cy="204" r="9" fill="#f59e0b" fill-opacity="0.55"/>
+      <circle cx="130" cy="204" r="9" fill="#fcd34d" fill-opacity="0.6"/>
+      <!-- CTA -->
+      <rect x="18" y="262" width="168" height="34" rx="12" fill="#d97706" fill-opacity="0.92"/>
+      <rect x="74" y="274" width="56" height="10" rx="5" fill="#ffffff" fill-opacity="0.85"/>
+    </g>
+
+    <rect width="800" height="400" fill="url(#svc-film)"/>
+  </g>
 </svg>

@@ -2,7 +2,8 @@
 @import "tw-animate-css";
 @plugin "@tailwindcss/typography";
 
-@custom-variant dark (&:where(.dark, .dark *));
+/* 深色模式：根元素带 data-theme="dark" 时激活 dark: 变体 */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
@@ -40,26 +41,41 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Open Design: 圆角 / 阴影 */
+  --radius-card: 12px;
+  --radius-ctrl: 8px;
+  --shadow-card-hover: 0 4px 16px rgba(0,0,0,0.06);
+
+  /* Open Design: 8张卡片底色 */
+  --background-image-cover-1: linear-gradient(140deg, oklch(28% 0.10 262), oklch(45% 0.17 260) 55%, oklch(62% 0.17 258));
+  --background-image-cover-2: linear-gradient(140deg, oklch(28% 0.09 250), oklch(44% 0.15 245) 55%, oklch(62% 0.16 240));
+  --background-image-cover-3: linear-gradient(140deg, oklch(28% 0.07 200), oklch(44% 0.11 190) 55%, oklch(62% 0.13 180));
+  --background-image-cover-4: linear-gradient(140deg, oklch(28% 0.11 285), oklch(44% 0.17 282) 55%, oklch(62% 0.16 280));
+  --background-image-cover-5: linear-gradient(140deg, oklch(30% 0.07 70), oklch(48% 0.12 65) 55%, oklch(66% 0.14 62));
+  --background-image-cover-6: linear-gradient(140deg, oklch(28% 0.08 215), oklch(44% 0.12 210) 55%, oklch(62% 0.13 205));
+  --background-image-cover-7: linear-gradient(180deg, oklch(22% 0.08 280), oklch(15% 0.05 275));
+  --background-image-cover-8: linear-gradient(140deg, oklch(28% 0.10 300), oklch(44% 0.16 298) 55%, oklch(62% 0.16 295));
 }
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
+  --background: oklch(98.5% 0.003 250);
+  --foreground: oklch(18% 0.012 250);
+  --card: oklch(100% 0 0);
+  --card-foreground: oklch(18% 0.012 250);
+  --popover: oklch(100% 0 0);
+  --popover-foreground: oklch(18% 0.012 250);
   --primary: oklch(0.205 0 0);
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
+  --muted-foreground: oklch(55% 0.012 250);
   --accent: oklch(0.97 0 0);
   --accent-foreground: oklch(0.205 0 0);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
+  --border: oklch(92% 0.005 250);
   --input: oklch(0.922 0 0);
   --ring: oklch(0.708 0 0);
   --chart-1: oklch(0.646 0.222 41.116);
@@ -75,25 +91,28 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+
+  /* 背景网格步长 */
+  --grid-size: 72px;
 }
 
-.dark {
-  --background: oklch(0.18 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
+[data-theme="dark"] {
+  --background: oklch(14% 0.014 260);
+  --foreground: oklch(93% 0.005 250);
+  --card: oklch(18% 0.016 260);
+  --card-foreground: oklch(93% 0.005 250);
+  --popover: oklch(18% 0.016 260);
+  --popover-foreground: oklch(93% 0.005 250);
   --primary: oklch(0.922 0 0);
   --primary-foreground: oklch(0.205 0 0);
   --secondary: oklch(0.269 0 0);
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
+  --muted-foreground: oklch(58% 0.012 250);
   --accent: oklch(0.269 0 0);
   --accent-foreground: oklch(0.985 0 0);
   --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
+  --border: oklch(25% 0.010 250);
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.556 0 0);
   --chart-1: oklch(0.488 0.243 264.376);
@@ -117,8 +136,58 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    color: var(--foreground);
+    background-color: var(--background);
+    -webkit-font-smoothing: antialiased;
+    transition: background-color 0.3s, color 0.3s;
+
+    /* 浅色：等高线波纹（蓝灰）叠在淡灰网格线之上 */
+    background-image:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1920 1080' preserveAspectRatio='xMidYMid slice'%3E%3Cg fill='none' stroke='%2394a3b8' stroke-width='1.2'%3E%3Cpath d='M-200,440 Q300,340 700,420 T1200,360 T1700,400 T2200,350' stroke-opacity='0.10'/%3E%3Cpath d='M-200,480 Q350,380 750,460 T1250,400 T1750,440 T2200,390' stroke-opacity='0.15'/%3E%3Cpath d='M-200,520 Q400,420 800,500 T1300,440 T1800,480 T2200,430' stroke-opacity='0.22'/%3E%3Cpath d='M-200,560 Q450,460 850,540 T1350,480 T1850,520 T2200,470' stroke-opacity='0.28'/%3E%3Cpath d='M-200,600 Q500,500 900,580 T1400,520 T1900,560 T2200,510' stroke-opacity='0.35'/%3E%3Cpath d='M-200,640 Q550,540 950,620 T1450,560 T1950,600 T2200,550' stroke-opacity='0.30'/%3E%3Cpath d='M-200,680 Q600,580 1000,660 T1500,600 T2000,640 T2200,590' stroke-opacity='0.22'/%3E%3Cpath d='M-200,720 Q650,620 1050,700 T1550,640 T2050,680 T2200,630' stroke-opacity='0.15'/%3E%3Cpath d='M-200,760 Q700,660 1100,740 T1600,680 T2100,720 T2200,670' stroke-opacity='0.10'/%3E%3Cpath d='M-200,800 Q750,700 1150,780 T1650,720 T2150,760 T2200,710' stroke-opacity='0.06'/%3E%3C/g%3E%3Cg fill='none' stroke='%233b82f6' stroke-width='0.8'%3E%3Cpath d='M-200,560 Q450,460 850,540 T1350,480 T1850,520 T2200,470' stroke-opacity='0.10'/%3E%3Cpath d='M-200,600 Q500,500 900,580 T1400,520 T1900,560 T2200,510' stroke-opacity='0.14'/%3E%3Cpath d='M-200,640 Q550,540 950,620 T1450,560 T1950,600 T2200,550' stroke-opacity='0.10'/%3E%3C/g%3E%3C/svg%3E"),
+      linear-gradient(var(--border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: cover, var(--grid-size) var(--grid-size), var(--grid-size) var(--grid-size);
+    background-position: center top, 0 0, 0 0;
+    background-repeat: no-repeat, repeat, repeat;
+    background-attachment: fixed, scroll, scroll;
   }
+
+  /* 深色：等高线降为极淡白曲线 + 网格降为极淡白线 */
+  [data-theme="dark"] body {
+    background-image:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1920 1080' preserveAspectRatio='xMidYMid slice'%3E%3Cg fill='none' stroke='%23ffffff' stroke-width='1.2'%3E%3Cpath d='M-200,440 Q300,340 700,420 T1200,360 T1700,400 T2200,350' stroke-opacity='0.03'/%3E%3Cpath d='M-200,480 Q350,380 750,460 T1250,400 T1750,440 T2200,390' stroke-opacity='0.045'/%3E%3Cpath d='M-200,520 Q400,420 800,500 T1300,440 T1800,480 T2200,430' stroke-opacity='0.06'/%3E%3Cpath d='M-200,560 Q450,460 850,540 T1350,480 T1850,520 T2200,470' stroke-opacity='0.075'/%3E%3Cpath d='M-200,600 Q500,500 900,580 T1400,520 T1900,560 T2200,510' stroke-opacity='0.09'/%3E%3Cpath d='M-200,640 Q550,540 950,620 T1450,560 T1950,600 T2200,550' stroke-opacity='0.075'/%3E%3Cpath d='M-200,680 Q600,580 1000,660 T1500,600 T2000,640 T2200,590' stroke-opacity='0.06'/%3E%3Cpath d='M-200,720 Q650,620 1050,700 T1550,640 T2050,680 T2200,630' stroke-opacity='0.045'/%3E%3Cpath d='M-200,760 Q700,660 1100,740 T1600,680 T2100,720 T2200,670' stroke-opacity='0.03'/%3E%3C/g%3E%3Cg fill='none' stroke='%2360a5fa' stroke-width='0.8'%3E%3Cpath d='M-200,560 Q450,460 850,540 T1350,480 T1850,520 T2200,470' stroke-opacity='0.10'/%3E%3Cpath d='M-200,600 Q500,500 900,580 T1400,520 T1900,560 T2200,510' stroke-opacity='0.14'/%3E%3Cpath d='M-200,640 Q550,540 950,620 T1450,560 T1950,600 T2200,550' stroke-opacity='0.10'/%3E%3C/g%3E%3C/svg%3E"),
+      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  }
+
+  /* 景深渐隐层：四周渐隐回背景色，中心保留可见 */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: radial-gradient(ellipse 70% 60% at 50% 38%, transparent 18%, var(--background) 72%);
+  }
+
+  /* 暗色 Hero 辉光焦点 */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s;
+    background: radial-gradient(ellipse 50% 38% at 50% 24%,
+      oklch(58% 0.20 255 / 0.14),
+      oklch(58% 0.20 255 / 0.04) 45%,
+      transparent 70%);
+  }
+  [data-theme="dark"] body::after { opacity: 1; }
+
+  /* 页面内容在背景层之上 */
+  main { position: relative; z-index: 1; }
 
   /* Shiki dual theme support */
   .shiki,
@@ -127,13 +196,13 @@
     background-color: transparent;
   }
 
-  .dark .shiki,
-  .dark .shiki span {
+  [data-theme="dark"] .shiki,
+  [data-theme="dark"] .shiki span {
     color: var(--shiki-dark);
     background-color: transparent;
   }
 
-.prose pre {
+  .prose pre {
     @apply leading-relaxed bg-transparent! font-mono!;
   }
 
@@ -157,15 +226,7 @@
     @apply text-lg! font-semibold! tracking-tight! leading-tight!;
   }
 
-  .prose h4 {
-    @apply text-base! font-medium! tracking-tight! leading-tight!;
-  }
-
-  .prose h5 {
-    @apply text-base! font-medium! tracking-tight! leading-tight!;
-  }
-
-  .prose h6 {
+  .prose h4, .prose h5, .prose h6 {
     @apply text-base! font-medium! tracking-tight! leading-tight!;
   }
 
@@ -185,7 +246,6 @@
     @apply mt-0!;
   }
 
-  /* Task lists (remark-gfm): remove bullet marker so it renders like a pure checklist */
   .prose :where(ul.contains-task-list):not(:where([class~="not-prose"] *)) {
     @apply list-none! pl-0!;
   }
@@ -194,10 +254,7 @@
     @apply pl-0!;
   }
 
-  .prose
-    :where(li.task-list-item > input[type="checkbox"]):not(
-      :where([class~="not-prose"] *)
-    ) {
+  .prose :where(li.task-list-item > input[type="checkbox"]):not(:where([class~="not-prose"] *)) {
     @apply mr-2 align-middle!;
   }
 
@@ -212,7 +269,7 @@
     @apply px-6 py-4 align-middle m-0 whitespace-nowrap;
   }
 
-  .prose tr{
+  .prose tr {
     @apply hover:bg-accent/50! transition-colors! cursor-pointer! h-10!;
   }
 
@@ -232,5 +289,25 @@
   .prose :where(tbody tr:last-child td):not(:where([class~="not-prose"] *)) {
     @apply border-b-0;
   }
+}
 
+/* 卡片头图统一材质 */
+.card-cover {
+  position: relative;
+  overflow: hidden;
+}
+.card-cover::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 5;
+  background: linear-gradient(180deg,
+    rgba(255,255,255,0.08) 0%, transparent 20%,
+    transparent 74%, rgba(0,0,0,0.26) 100%);
+}
+.card-cover::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 24px 24px;
+  -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 40%, #000 30%, transparent 75%);
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 40%, #000 30%, transparent 75%);
 }

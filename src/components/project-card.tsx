@@ -19,7 +19,7 @@ function ProjectImage({ src, alt }: { src: string; alt: string }) {
     <img
       src={src}
       alt={alt}
-      className="w-full h-48 object-cover"
+      className="w-full h-48 object-cover relative z-[2]"
       onError={() => setImageError(true)}
     />
   );
@@ -34,6 +34,7 @@ interface Props {
   link?: string;
   image?: string;
   video?: string;
+  coverGradient?: string;
   links?: readonly {
     icon: React.ReactNode;
     type: string;
@@ -51,6 +52,7 @@ export function ProjectCard({
   link,
   image,
   video,
+  coverGradient,
   links,
   className,
 }: Props) {
@@ -61,27 +63,31 @@ export function ProjectCard({
       target={isInternal ? undefined : "_blank"}
       rel={isInternal ? undefined : "noopener noreferrer"}
       className={cn(
-        "flex flex-col h-full border border-border rounded-xl overflow-hidden hover:ring-2 cursor-pointer hover:ring-muted transition-all duration-200",
+        "flex flex-col h-full border border-border rounded-card overflow-hidden hover:shadow-card-hover cursor-pointer transition-all duration-200 bg-card relative z-[2]",
         className
       )}
     >
-      <div className="relative shrink-0">
-        <div className="block">
-          {video ? (
-            <video
-              src={video}
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="w-full h-48 object-cover"
-            />
-          ) : image ? (
-            <ProjectImage src={image} alt={title} />
-          ) : (
-            <div className="w-full h-48 bg-muted" />
-          )}
-        </div>
+      <div className="relative shrink-0 overflow-hidden rounded-t-card">
+        {coverGradient ? (
+          <div className="card-cover w-full aspect-[2/1]" style={{ background: coverGradient }} />
+        ) : video ? (
+          <video
+            src={video}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full aspect-[2/1] object-cover"
+          />
+        ) : image ? (
+          <img
+            src={image}
+            alt={title}
+            className="w-full aspect-[2/1] object-cover"
+          />
+        ) : (
+          <div className="w-full aspect-[2/1] bg-muted" />
+        )}
       </div>
       <div className="p-6 flex flex-col gap-3 flex-1">
         <div className="flex items-start justify-between gap-2">
@@ -89,9 +95,11 @@ export function ProjectCard({
             <h3 className="font-semibold">{title}</h3>
             <time className="text-xs text-muted-foreground">{dates}</time>
           </div>
-          <ArrowUpRight className="h-4 w-4 text-muted-foreground" aria-hidden />
+          {href && href !== "" && (
+            <ArrowUpRight className="h-4 w-4 text-muted-foreground" aria-hidden />
+          )}
         </div>
-        <div className="text-xs flex-1 prose max-w-full text-pretty font-sans leading-relaxed text-muted-foreground dark:prose-invert">
+        <div className="text-sm flex-1 prose max-w-full text-pretty font-sans leading-relaxed text-muted-foreground dark:prose-invert">
           <Markdown>{description}</Markdown>
         </div>
         {tags && tags.length > 0 && (

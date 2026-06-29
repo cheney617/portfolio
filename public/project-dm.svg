@@ -1,7 +1,64 @@
-<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
-  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#4f9dff"/><stop offset="100%" stop-color="#2563eb"/></linearGradient></defs>
-  <rect width="800" height="400" fill="url(#bg)"/>
-  <text x="400" y="150" fill="#fff" font-family="system-ui,sans-serif" font-size="72" font-weight="700" text-anchor="middle">+35% 私信转化</text>
-  <text x="400" y="240" fill="#fff" font-family="system-ui,sans-serif" font-size="26" text-anchor="middle" opacity="0.65">AI识别高意向用户</text>
-  <text x="400" y="280" fill="#fff" font-family="system-ui,sans-serif" font-size="26" text-anchor="middle" opacity="0.65">自动触发私信引导</text>
+<svg width="800" height="400" viewBox="0 0 800 400" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="私信转化提效 — 直播间私信引导">
+  <defs>
+    <linearGradient id="dm-bg" x1="0" y1="0" x2="800" y2="400" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="oklch(28% 0.09 250)"/>
+      <stop offset="0.55" stop-color="oklch(44% 0.15 245)"/>
+      <stop offset="1" stop-color="oklch(62% 0.16 240)"/>
+    </linearGradient>
+    <linearGradient id="dm-film" x1="0" y1="0" x2="0" y2="400" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.08"/>
+      <stop offset="0.2" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="0.74" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0.26"/>
+    </linearGradient>
+    <pattern id="dm-grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M24 0H0V24" fill="none" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="dm-mask" cx="0.5" cy="0.4" r="0.55">
+      <stop offset="0.3" stop-color="#fff"/><stop offset="0.75" stop-color="#000"/>
+    </radialGradient>
+    <mask id="dm-gridmask"><rect width="800" height="400" fill="url(#dm-mask)"/></mask>
+    <clipPath id="dm-clip"><rect width="800" height="400"/></clipPath>
+  </defs>
+  <g clip-path="url(#dm-clip)">
+    <rect width="800" height="400" fill="url(#dm-bg)"/>
+    <rect width="800" height="400" fill="url(#dm-grid)" mask="url(#dm-gridmask)"/>
+
+    <text x="56" y="150" font-family="Geist, system-ui, sans-serif" font-size="92" font-weight="700" letter-spacing="-3" fill="#ffffff">+35%</text>
+    <text x="60" y="190" font-family="Geist Mono, ui-monospace, monospace" font-size="20" fill="#ffffff" fill-opacity="0.62">DM conversion</text>
+    <text x="60" y="218" font-family="Geist Mono, ui-monospace, monospace" font-size="20" fill="#ffffff" fill-opacity="0.62">私信转化</text>
+
+    <!-- 竖屏直播间手机 -->
+    <g transform="translate(556 36) rotate(3)">
+      <rect x="0" y="0" width="196" height="332" rx="30" fill="#0c1628" stroke="#ffffff" stroke-opacity="0.14" stroke-width="2"/>
+      <rect x="74" y="14" width="44" height="8" rx="4" fill="#000"/>
+      <!-- LIVE -->
+      <rect x="16" y="34" width="46" height="20" rx="5" fill="oklch(63% 0.21 25 / 0.92)"/>
+      <circle cx="28" cy="44" r="3.5" fill="#fff"/>
+      <rect x="36" y="41" width="20" height="6" rx="3" fill="#ffffff" fill-opacity="0.85"/>
+      <!-- 主播头像 -->
+      <circle cx="172" cy="46" r="13" fill="#ffffff" fill-opacity="0.12"/>
+      <!-- 飘屏弹幕 -->
+      <g opacity="0.3">
+        <rect x="16" y="90" width="88" height="8" rx="4" fill="#ffffff"/>
+        <rect x="34" y="106" width="64" height="8" rx="4" fill="#ffffff"/>
+        <rect x="16" y="122" width="100" height="8" rx="4" fill="#ffffff"/>
+      </g>
+      <!-- 私信气泡（核心视觉，高对比） -->
+      <g>
+        <rect x="16" y="198" width="120" height="46" rx="14" fill="oklch(58% 0.19 255 / 0.92)"/>
+        <rect x="16" y="232" width="14" height="14" fill="oklch(58% 0.19 255 / 0.92)"/>
+        <rect x="30" y="212" width="80" height="7" rx="3.5" fill="#ffffff" fill-opacity="0.55"/>
+        <rect x="30" y="226" width="56" height="7" rx="3.5" fill="#ffffff" fill-opacity="0.35"/>
+        <!-- 转化绿气泡 -->
+        <rect x="16" y="252" width="92" height="30" rx="12" fill="oklch(68% 0.16 160 / 0.85)"/>
+        <rect x="30" y="263" width="56" height="8" rx="4" fill="#ffffff" fill-opacity="0.7"/>
+      </g>
+      <!-- 输入栏 -->
+      <rect x="16" y="296" width="140" height="24" rx="12" fill="#ffffff" fill-opacity="0.07"/>
+      <circle cx="174" cy="308" r="12" fill="oklch(78% 0.13 255 / 0.5)"/>
+    </g>
+
+    <rect width="800" height="400" fill="url(#dm-film)"/>
+  </g>
 </svg>
